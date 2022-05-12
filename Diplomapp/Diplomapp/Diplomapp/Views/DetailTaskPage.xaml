@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Diplomapp.Views.DetailTaskPage"
+             xmlns:xts="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:viewmodel="clr-namespace:Diplomapp.ViewModels"
+             >
+    <ContentPage.BindingContext>
+        <viewmodel:TaskDetailViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <xts:EventToCommandBehavior EventName="Appearing" Command="{Binding .}"/>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout >
+                <Label Text = "{Binding Name}"/>
+                <Label Text = "{Binding Description}"/>
+                <Label Text = "{Binding Created}"/>
+                <Label Text = "{Binding Deadline}"/>
+
+            </StackLayout>
+            <StackLayout  x:DataType="{x:Null}">
+                <Picker Title="Select the employee" ItemsSource = "{Binding Members}" ItemDisplayBinding="{Binding UserName}" >
+                </Picker>
+
+            </StackLayout>
+
+            <StackLayout>
+                <xts:Expander IsExpanded="False">
+                    <xts:Expander.Header>
+                        <Label Text="Checks"/>
+                    </xts:Expander.Header>
+                    <xts:Expander.Content>
+                        <ListView ItemsSource="{Binding Checklists}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox BindingContext="{Binding IsChecked}"/>
+                                            <Label Text="{Binding ProblemName}"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <ListView.Footer>
+                                <StackLayout>
+                                    <Button Text="add checkbox" Command="{Binding .}"/>
+                                </StackLayout>
+                            </ListView.Footer>
+                        </ListView>
+                    </xts:Expander.Content>
+                </xts:Expander>
+            </StackLayout>
+            <StackLayout>
+                <ListView ItemsSource="{Binding Comments}">
+                    <ListView.Header>
+                        <StackLayout>
+                            <Entry />
+                            <Button Text="Add comment"/>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Text}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button Text="Save" Command="{Binding command}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

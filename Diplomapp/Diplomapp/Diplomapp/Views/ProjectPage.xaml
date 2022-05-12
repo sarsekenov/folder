@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:viewmodel="clr-namespace:Diplomapp.ViewModels"
+            xmlns:model="clr-namespace:Diplomapp.Models"
+             x:Class="Diplomapp.Views.ProjectPage"
+            xmlns:xtc ="http://xamarin.com/schemas/2020/toolkit"
+            >
+    <TabbedPage.BindingContext>
+        <viewmodel:ProjectPageViewModel/>
+    </TabbedPage.BindingContext>
+    <TabbedPage.Behaviors>
+        <xtc:EventToCommandBehavior EventName="Appearing" Command="{Binding initialize}"/>
+    </TabbedPage.Behaviors>
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Информация о проекте"  >
+    
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="{Binding OwnerId}"/>
+                <Label Text="{Binding Name}"/>
+                <Entry  Text="{Binding Description}" />
+                
+            </StackLayout>            
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Команда" >
+        <ContentPage.Behaviors>
+            <xtc:EventToCommandBehavior
+                EventName="Appearing" Command="{Binding getempl}"
+                />
+        </ContentPage.Behaviors>
+        <!--<ContentPage.ToolbarItems>
+            <ToolbarItem  Text="Пригласить" />
+
+        </ContentPage.ToolbarItems>-->
+        <StackLayout>
+            <ListView 
+                ItemsSource="{Binding Members}"
+                RefreshCommand="{Binding getempl}"
+                IsPullToRefreshEnabled="True"
+                
+                >
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Button HorizontalOptions="End" Text="Пригласить" Command="{Binding invite}"/>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:ProjectMember">
+                        <ViewCell>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{Binding Id}"/>
+                                    <Label Text="{Binding ProjectID}"/>
+                                    <Label Text="{Binding Position}"/>
+                                    <Label Text="{Binding Role}"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Финансы" >
+        <StackLayout>
+            <ListView>
+                <ListView.Header>
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
+                        <Label Grid.Column="0"  Text="Сотрудник"/>
+                        <Label Grid.Column="1" Text= "Ставка"/>
+                        <Label Grid.Column="2" Text=" Зарплата"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
+                                    <Label Grid.Column="0" />
+                                    <Label Grid.Column="1" />
+                                    <Label Grid.Column="2" />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Button Text="Рассчитать"/>
+                </ListView.Footer>
+                
+            </ListView>
+            <ListView >
+                <ListView.Header>
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
+                        <Label Grid.Column="0"  Text="Сотрудник"/>
+                        <Label Grid.Column="1" Text= "Ставка"/>
+                        <Label Grid.Column="2" Text=" Зарплата"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
+                                    <Label Grid.Column="0" />
+                                    <Label Grid.Column="1" />
+                                    <Label Grid.Column="2" />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Label/>
+                </ListView.Footer>
+                
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Задачи">
+        <ContentPage.Behaviors>
+            <xtc:EventToCommandBehavior EventName="Appearing" Command="{Binding GetProblems}" />
+        </ContentPage.Behaviors>
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <xtc:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+            </ResourceDictionary>
+        </ContentPage.Resources>
+        <ContentPage.Content>
+            
+            <ListView ItemsSource="{Binding Problems}"
+                >
+                <ListView.Behaviors>
+                    <xtc:EventToCommandBehavior EventName="ItemSelected" Command="{Binding SelectedProblem}" EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"/>
+                </ListView.Behaviors>
+                <ListView.Header>
+                    <StackLayout>
+                        <Button Text="Создать задание" Command="{Binding CreateTask}"/> 
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Description}"/>
+                                <Label Text="{Binding Deadline}"/>
+                                <Label Text="{Binding Creationtime}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:Diplomapp.ViewModels"
+             x:Class="Diplomapp.Views.LoginPage"
+             x:DataType="viewmodel:LoginPageViewModel"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             
+             >
+    
+    <ContentPage.BindingContext>
+        <viewmodel:LoginPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions ="FillAndExpand" VerticalOptions="Center" Padding="30" >
+            <Entry Placeholder = "Type your email"  Text="{Binding Username}"/>
+            <Entry IsPassword = "True" Placeholder=" Type Password" Text="{Binding Password}"/>
+            <Button Text="Login" Command="{Binding login}"/>
+            <Label Text="Register" HorizontalOptions="CenterAndExpand"  FontSize="Medium" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding register} "/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

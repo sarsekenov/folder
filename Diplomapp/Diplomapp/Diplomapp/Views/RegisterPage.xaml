@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:Diplomapp.ViewModels"
+             x:Class="Diplomapp.Views.RegisterPage" x:DataType="viewmodel:RegisterPageViewModel"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <viewmodel:RegisterPageViewModel>
+        </viewmodel:RegisterPageViewModel>
+    </ContentPage.BindingContext>   
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Margin="5,10,5,10" FontSize="Header" HorizontalOptions="CenterAndExpand">Register new user</Label>
+            <Frame CornerRadius="15" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Entry Placeholder="Type your email" Text ="{Binding Email}"/>
+                    <Entry Placeholder="Type Password" IsPassword="True" MaxLength="10" Text="{Binding Password}" />
+                    <Entry Placeholder="Confirm Password" IsPassword="True" MaxLength="10"  Text="{Binding ConfirmPassword}"/>
+                </StackLayout>
+            </Frame>
+            <Button Text="Register" Command="{Binding Reg}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
