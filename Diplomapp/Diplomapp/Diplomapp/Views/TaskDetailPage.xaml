@@ -22,22 +22,14 @@
                 <Entry Text="{Binding Problem.Name}"/>
                 <Entry Text="{Binding Problem.Description}"/>
                 <DatePicker MinimumDate="01/01/2022" Date="{Binding Problem.Deadline ,Mode=TwoWay}">
-                    <!--<DatePicker.Behaviors>
-                        <xts:EventToCommandBehavior EventName = "DateSelected">
-                            
-                        </xts:EventToCommandBehavior>
-                    </DatePicker.Behaviors>-->
+                    
                 </DatePicker>
 
             </StackLayout>
             <StackLayout  x:DataType="{x:Null}">
                 <Picker Title="Select the employee" ItemsSource = "{Binding Members}" ItemDisplayBinding="{Binding UserName}" 
                       SelectedItem="{Binding SelectedMember, Mode=TwoWay}" >
-                    <!--<Picker.Behaviors>
-                        <xts:EventToCommandBehavior EventName="SelectedIndexChanged" 
-                                                    EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}" 
-                                                    Command = "{Binding Selectedempl }"/> 
-                    </Picker.Behaviors>-->
+                    
                 </Picker>
             
             </StackLayout>
@@ -62,6 +54,7 @@
                             <ListView.Footer>
                                 <StackLayout>
                                     <Button Text="add checkbox" Command="{Binding .}"/>
+                                    
                                 </StackLayout>
                             </ListView.Footer>
                         </ListView>

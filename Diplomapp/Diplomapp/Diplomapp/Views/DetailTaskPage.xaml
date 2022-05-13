@@ -17,12 +17,13 @@
             <StackLayout >
                 <Label Text = "{Binding Name}"/>
                 <Label Text = "{Binding Description}"/>
-                <Label Text = "{Binding Created}"/>
+                <Label Text = "{Binding Creationtime}"/>
                 <Label Text = "{Binding Deadline}"/>
 
             </StackLayout>
             <StackLayout  x:DataType="{x:Null}">
-                <Picker Title="Select the employee" ItemsSource = "{Binding Members}" ItemDisplayBinding="{Binding UserName}" >
+                <Picker Title="Select the employee" ItemsSource = "{Binding Members}" ItemDisplayBinding="{Binding UserName}" SelectedItem="{Binding TasksUserName ,Mode=TwoWay}" >
+
                 </Picker>
 
             </StackLayout>
@@ -72,7 +73,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            <Button Text="Save" Command="{Binding command}"/>
+            <Button Text="Save" Command="{Binding command1}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

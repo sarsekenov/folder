@@ -3636,11 +3636,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.Android\\Diplomapp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.Android\\Diplomapp.Android.csproj",
       "projectName": "Diplomapp.Android",
-      "projectPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.Android\\Diplomapp.Android.csproj",
+      "projectPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.Android\\Diplomapp.Android.csproj",
       "packagesPath": "C:\\Users\\777\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.Android\\obj\\",
+      "outputPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3661,8 +3661,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
-              "projectPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj"
+            "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
+              "projectPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {}
+    "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {
+    "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
         "projectName": "Diplomapp.iOS",
-        "projectPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
+        "projectPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
         "packagesPath": "C:\\Users\\777\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\obj\\",
+        "outputPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
-                "projectPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj"
+              "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
+                "projectPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
+    "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
+        "projectUniqueName": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
         "projectName": "Diplomapp",
-        "projectPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
+        "projectPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
         "packagesPath": "C:\\Users\\777\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp\\obj\\",
+        "outputPath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

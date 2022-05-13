@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>ec0cc741-fd3e-485c-81be-68815c480690</PackageIdentityName>
     <PackageIdentityPublisher>CN=1A93C1D1-6EB7-4C17-B0CA-0B82C851A516</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\obj\x64\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>FD93EB98B05849E32072E7AA96D630C6DCA3F4334A46E30DE84AEB76BB4A1C78</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>85FF2C59-23C9-427C-ACF9-6FEDAF5FBA9B_1.0.0.0_x64__r9dcca612tbk4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>85FF2C59-23C9-427C-ACF9-6FEDAF5FBA9B_r9dcca612tbk4!App</RegisteredUserModeAppID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-05-12T10:03:58.277</Modified>
+      <Modified>2022-05-13T04:20:35.107</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Diplomapp.UWP.exe">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Diplomapp.UWP.exe">
       <PackagePath>entrypoint\Diplomapp.UWP.exe</PackagePath>
-      <Modified>2022-05-12T10:03:57.678</Modified>
+      <Modified>2022-05-13T04:20:34.316</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\777\.nuget\packages\microcharts\0.9.5.9\lib\uap10.0\Microcharts.Uwp.dll">
       <PackagePath>Microcharts.Uwp.dll</PackagePath>
@@ -122,9 +122,9 @@
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
       <Modified>2021-10-14T09:55:14.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp\bin\Debug\netstandard2.0\Diplomapp.dll">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp\bin\Debug\netstandard2.0\Diplomapp.dll">
       <PackagePath>Diplomapp.dll</PackagePath>
-      <Modified>2022-05-12T11:10:53.612</Modified>
+      <Modified>2022-05-13T05:51:54.637</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\777\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -138,168 +138,168 @@
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
       <Modified>2021-10-14T09:49:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2022-04-22T08:20:44.171</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.077</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.086</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.094</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.103</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.109</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.116</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.128</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.133</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.140</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.147</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.155</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.162</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.170</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.055</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.061</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.066</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.072</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.079</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.095</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.104</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.117</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.129</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.134</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.141</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.148</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-04-22T08:20:44.156</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\xamarin_logo.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\xamarin_logo.png">
       <PackagePath>xamarin_logo.png</PackagePath>
       <Modified>2022-04-22T08:20:44.402</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\icon_about.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\icon_about.png">
       <PackagePath>icon_about.png</PackagePath>
       <Modified>2022-04-22T08:20:44.370</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\icon_feed.png">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\icon_feed.png">
       <PackagePath>icon_feed.png</PackagePath>
       <Modified>2022-04-22T08:20:44.373</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Diplomapp.UWP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Diplomapp.UWP.xr.xml">
       <PackagePath>Diplomapp.UWP.xr.xml</PackagePath>
       <Modified>2022-04-22T10:32:48.299</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-05-12T10:03:57.630</Modified>
+      <Modified>2022-05-13T04:20:34.272</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-05-12T10:03:57.631</Modified>
+      <Modified>2022-05-13T04:20:34.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -313,13 +313,13 @@
       <PackagePath>WinMetadata\Microsoft.UI.Xaml.winmd</PackagePath>
       <Modified>2020-07-10T00:07:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <Modified>2022-05-12T03:12:52.310</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\777\source\repos\newrepos\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Core\Diplomapp.UWP.exe">
+    <AppxPackagedFile Include="C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Core\Diplomapp.UWP.exe">
       <PackagePath>Diplomapp.UWP.exe</PackagePath>
-      <Modified>2022-05-12T10:03:58.273</Modified>
+      <Modified>2022-05-13T04:20:35.104</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

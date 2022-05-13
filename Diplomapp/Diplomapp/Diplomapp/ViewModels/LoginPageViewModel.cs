@@ -72,8 +72,8 @@ namespace Diplomapp.ViewModels
             request.Content = new FormUrlEncodedContent(keyValues);
 
             var client = new HttpClient();
-            var response = await client.SendAsync(request);
-            var content = await response.Content.ReadAsStringAsync();
+            try { var response = await client.SendAsync(request);
+                var content = await response.Content.ReadAsStringAsync();
             try
             {
                 var pairs = JsonConvert.DeserializeObject<Token>(content);
@@ -90,8 +90,13 @@ namespace Diplomapp.ViewModels
             }
             catch 
             {
+                await Application.Current.MainPage.DisplayAlert("Error ", "Server cant authorize", "Ok");
+            } }
+            catch 
+            {
                 await Application.Current.MainPage.DisplayAlert("Error ", "Server isnt working", "Ok");
             }
+            
             
         }
 

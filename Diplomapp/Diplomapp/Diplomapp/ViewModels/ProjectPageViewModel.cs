@@ -104,7 +104,10 @@ namespace Diplomapp.ViewModels
         }
         async Task selectedProblem(Problem problem) 
         {
-            await Shell.Current.GoToAsync(nameof(DetailTaskPage)+$"?Name={problem.Name}&Id={Id}&ProblemId={problem.Id}");
+            await Shell.Current.GoToAsync(nameof(DetailTaskPage)+$"?Name={problem.Name}" +
+                $"&Id={Id}&ProblemId={problem.Id}&ProblemDescription={problem.Description}&" +
+                $"ProblemCreationtime={problem.Creationtime}" +
+                $"&ProblemDeadline={problem.Deadline}");
         }
 
     }

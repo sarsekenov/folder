@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f1hxGR6I0iwWbQaf17bxMPW53JbLw1sCrrGxOF6/hshvO2MQRKgbC/zHQ3Wv8wYkTAcfO7XZqw2VtZlW5QMUSA==",
+  "dgSpecHash": "+kQE1UOS7WGPP/nBXcGg8dL55U498yiDzi1aZFEAskN15WAyO8bty3Keq3qBrqo8RruNkEihuzabm5waXulFtA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\777\\source\\repos\\newrepos\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
+  "projectFilePath": "C:\\Users\\777\\Desktop\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\777\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
     "C:\\Users\\777\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",

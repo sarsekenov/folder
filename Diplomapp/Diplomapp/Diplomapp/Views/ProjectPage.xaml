@@ -20,7 +20,6 @@
                 <Label Text="{Binding OwnerId}"/>
                 <Label Text="{Binding Name}"/>
                 <Entry  Text="{Binding Description}" />
-                
             </StackLayout>            
         </ContentPage.Content>
     </ContentPage>
@@ -30,10 +29,7 @@
                 EventName="Appearing" Command="{Binding getempl}"
                 />
         </ContentPage.Behaviors>
-        <!--<ContentPage.ToolbarItems>
-            <ToolbarItem  Text="Пригласить" />
-
-        </ContentPage.ToolbarItems>-->
+        
         <StackLayout>
             <ListView 
                 ItemsSource="{Binding Members}"
