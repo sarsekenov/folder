@@ -14,6 +14,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
+            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="You dont have any invites" IsVisible="{Binding Empty} "/>
             <ListView 
                 RefreshCommand="{Binding command}"
                  ItemsSource="{Binding Invites }">
@@ -25,16 +26,17 @@
                                     <Label  Text="{Binding OwnerEmail}" />
                                     <Label  Text="{Binding Invitation}" />
                                     <Label  Text="{Binding ProjectName}" />
-                                    <Label  Text="{Binding Role}" />
-                                    <Label  Text="{Binding Position}" />
-                                    <Button Text="Принять" Command="{Binding Path=BindingContext.Acceptinv ,Source={x:Reference InviteView}}" CommandParameter ="{Binding .}"/>
-                                    <Button Text="Отказаться" Command="{Binding Path=BindingContext.Decline ,Source={x:Reference InviteView}}" CommandParameter ="{Binding .}"/>
-                                </StackLayout>      
-                            </Frame>                      
+                                    <Label  Text="{Binding Role}"/>
+                                    <Label  Text="{Binding Position}"/>
+                                    <Button Text="Принять" Command = "{Binding Path=BindingContext.Acceptinv ,Source={x:Reference InviteView}}" CommandParameter ="{Binding .}"/>
+                                    <Button Text="Отказаться" Command = "{Binding Path=BindingContext.Decline ,Source={x:Reference InviteView}}" CommandParameter ="{Binding .}"/>
+                                </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

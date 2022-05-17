@@ -18,9 +18,10 @@ namespace DiplomServer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/oborudovanies
-        public IQueryable<oborudovanie> Getoborudovanies()
+        [Route("GetProjectoborudovanies")]
+        public IQueryable<oborudovanie> Getoborudovanies(int id)
         {
-            return db.oborudovanies;
+            return db.oborudovanies.Where(c=>c.ProjectId==id);
         }
 
         // GET: api/oborudovanies/5

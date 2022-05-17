@@ -88,11 +88,15 @@
     <FlyoutItem Title="Приглашения">
         <ShellContent Route="InvitesPage" ContentTemplate="{DataTemplate local:InvitesPage}"/>
     </FlyoutItem>
+    
     <FlyoutItem Title="Задачи">
         <ShellContent Route="TasksPage" ContentTemplate="{DataTemplate local:TasksPage}"/>
     </FlyoutItem>
     <FlyoutItem Title="Статистика">
         <ShellContent Route="StatisticsPage" ContentTemplate="{DataTemplate local:StatisticsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Аккаунт">
+        <ShellContent Route="CreateUinfo" ContentTemplate="{DataTemplate local:CreateUinfo}"/>
     </FlyoutItem>
     <MenuItem Text="Выйти"  Clicked = "MenuItem_Clicked"  >
     </MenuItem>

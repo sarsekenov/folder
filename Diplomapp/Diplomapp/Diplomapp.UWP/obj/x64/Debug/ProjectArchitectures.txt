@@ -1,1 +1,1 @@
-C:\Users\777\Desktop\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Diplomapp.UWP.csproj;x64
+C:\Users\sars1\Desktop\folder\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Diplomapp.UWP.csproj;x64

@@ -17,12 +17,13 @@ namespace Diplomapp
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
-            //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(SaveProject), typeof(SaveProject));
             Routing.RegisterRoute(nameof(ProjectPage), typeof(ProjectPage));
             Routing.RegisterRoute(nameof(AddCompany), typeof(AddCompany));
             Routing.RegisterRoute(nameof(TaskDetailPage), typeof(TaskDetailPage));
             Routing.RegisterRoute(nameof(DetailTaskPage), typeof(DetailTaskPage));
             Routing.RegisterRoute(nameof(CreateInvitePage), typeof(CreateInvitePage));
+            Routing.RegisterRoute(nameof(CreateUinfo), typeof(CreateUinfo));
             Logout = new AsyncCommand(logout);
             command = new Command(OnMenuItemClicked);
         }

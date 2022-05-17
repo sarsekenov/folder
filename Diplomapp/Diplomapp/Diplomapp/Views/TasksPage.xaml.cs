@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace Diplomapp.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TasksPage : ContentPage
-	{
-		public TasksPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class TasksPage : ContentPage
+    {
+        public TasksPage()
+        {
+            InitializeComponent();
+        }
+    }
 }

@@ -53,8 +53,8 @@
                             </ListView.ItemTemplate>
                             <ListView.Footer>
                                 <StackLayout>
-                                    <Button Text="add checkbox" Command="{Binding .}"/>
-                                    
+                                    <Entry Placeholder="type the name of Check" Text="{Binding Title,Mode=TwoWay}"/>
+                                    <Button Text="add checkbox" Command="{Binding addCheck}"/>
                                 </StackLayout>
                             </ListView.Footer>
                         </ListView>

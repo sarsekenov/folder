@@ -17,7 +17,7 @@
         <extensions:EventToCommandBehavior EventName="Appearing" Command="{Binding command}"/>
     </ContentPage.Behaviors>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Создать проект"   Clicked = "ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Создать проект" Clicked = "ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView HasUnevenRows="True" 
@@ -44,7 +44,7 @@
                 <DataTemplate>
                     <ViewCell x:DataType="model:Project" >
                         <ViewCell.ContextActions>
-                            <MenuItem Text = " favorite "  />
+                            <MenuItem Text = " favorite " />
                             <MenuItem Text = " Delete " />
                         </ViewCell.ContextActions>
                         <StackLayout>

@@ -18,9 +18,9 @@ namespace DiplomServer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/ProblemComments
-        public IQueryable<ProblemComment> GetProblemComments()
+        public IQueryable<ProblemComment> GetProblemComments(int id)
         {
-            return db.ProblemComments;
+            return db.ProblemComments.Where(c=>c.ProblemId==id);
         }
 
         // GET: api/ProblemComments/5

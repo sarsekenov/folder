@@ -38,13 +38,20 @@ namespace Diplomapp.ViewModels
         {
             Problem = new Problem();
             ProblemMember = new ProblemMember();
-            command1 = new AsyncCommand(putChanges);
-            command = new AsyncCommand(saveChanges);
             Checklists = new ObservableRangeCollection<ProblemChecklist>();
             Comments = new ObservableRangeCollection<ProblemComment>();
             Members = new List<ProjectMember>();
-            SelectedMember = new ProjectMember();
+            #region Commands
+            command1 = new AsyncCommand(putChanges);
+            command = new AsyncCommand(saveChanges);
+            GetComments = new AsyncCommand(getcomments);
+            SendComment = new AsyncCommand(sendcomment);
+            GetChecklist = new AsyncCommand(getchecklist);
+            SendChecklist = new AsyncCommand(sendChecklist);
             GetMember = new AsyncCommand(getMember);
+            Initial = new AsyncCommand(init);
+            #endregion
+            SelectedMember = new ProjectMember();
             if (ProjectPageViewModel.ProjectMembers.Count >0)
             {
                 foreach (var member in ProjectPageViewModel.ProjectMembers) 
@@ -56,6 +63,22 @@ namespace Diplomapp.ViewModels
             
 
         }
+
+
+        public AsyncCommand addCheck { get; set; }
+        async Task AddCheck()
+        {
+            Checklists.Add(new ProblemChecklist() { IsChecked = false, ProblemId = ProblemId, ProblemName= Title});
+            Title = string.Empty;
+
+        }
+        public AsyncCommand Initial { get; set; }
+        public async Task init()
+        {
+            await GetChecklist.ExecuteAsync();
+            await GetComments.ExecuteAsync();
+        }
+
         public List<ProjectMember> Members { get; set; }
         public async Task putChanges() 
         {
@@ -115,15 +138,21 @@ namespace Diplomapp.ViewModels
             using (App.client = new HttpClient()) 
             {
                 App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
-                var json = await App.client.GetStringAsync(App.localUrl + $"api/ProlemMembers?id={ProblemId}");
-                var res = JsonConvert.DeserializeObject<ProblemMember>(json);
-                foreach (var member in Members) 
+                var json = await App.client.GetAsync(App.localUrl + $"api/ProlemMembers?id={ProblemId}");
+                if (json.IsSuccessStatusCode) 
                 {
-                    if (res.UserId == member.UserID) 
+                    var result = await json.Content.ReadAsStringAsync();
+                    var res = JsonConvert.DeserializeObject<ProblemMember>(result);
+
+                    foreach (var member in Members) 
                     {
-                        TasksUserName = member;
-                    }
+                        if (res.UserId == member.UserID) 
+                        {
+                            TasksUserName = member;
+                        }
+                    } 
                 }
+                
                 
             }
         }
@@ -131,15 +160,7 @@ namespace Diplomapp.ViewModels
 
         public AsyncCommand GetMember { get; set; }
         public ProjectMember SelectedMember { get; set; }
-        //string taskempname;
-        //public string Taskempname { get => taskempname; set=>SetProperty(ref taskempname,value); }
-        /*public async Task selectedempl(ProjectMember member) 
-        { 
-            if (member == null)
-                return;
-
-        }
-        public AsyncCommand<ProjectMember> Selectedempl { get; set; }*/
+        
         public AsyncCommand command { get; set; }
         public Problem Problem { get; set; }
         public ProblemMember ProblemMember { get; set; }
@@ -147,5 +168,96 @@ namespace Diplomapp.ViewModels
         public ProblemComment ProblemComment{ get; set; }
         public ObservableRangeCollection<ProblemChecklist> Checklists { get; set; }
         public ObservableRangeCollection<ProblemComment> Comments{ get; set; }
+
+        public AsyncCommand GetComments { get; set; }
+        public async Task getcomments() 
+        {
+            using (App.client = new HttpClient())
+            {
+                Comments.Clear();
+                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
+                var json = await App.client.GetAsync(App.localUrl + $"api/ProblemComments?id={ProblemId}");
+                if (json.IsSuccessStatusCode) 
+                {
+                    var result = await json.Content.ReadAsStringAsync();
+                    var res = JsonConvert.DeserializeObject<List<ProblemComment>>(result);
+                    if (res.Count != 0)
+                    {
+                        Comments.AddRange(res);
+                    }
+                }
+                
+            }
+        }
+        string comment;
+        public string Comment { get => comment; set => SetProperty(ref comment, value); }
+        public AsyncCommand SendComment { get; set; }
+        public async Task sendcomment() 
+        {
+            using (App.client = new HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
+                var comment = new ProblemComment() {ProblemId = ProblemId, Author = App.email,Text = Comment};
+                var json = JsonConvert.SerializeObject(comment);
+                var con = new StringContent(json);
+                
+                con.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                var req = await App.client.PostAsync(App.localUrl + $"api/ProblemComments",con);
+
+                var dson = await req.Content.ReadAsStringAsync();
+                var res2 = JsonConvert.DeserializeObject<ProblemComment>(dson);
+                Comment = string.Empty;               
+                if (req.IsSuccessStatusCode)
+                {
+                    Comments.Add(res2);
+                }
+            }
+
+        }
+        string check;
+        public string Check { get => check; set => SetProperty(ref check, value); }
+        public AsyncCommand GetChecklist { get; set; }
+        public async Task getchecklist()
+        {
+            using (App.client = new HttpClient())
+            {
+                Checklists.Clear();
+                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
+                var json = await App.client.GetAsync(App.localUrl + $"api/ProblemChecklists?id={ProblemId}");
+                if (json.IsSuccessStatusCode) 
+                {
+                    var result = await json.Content.ReadAsStringAsync();
+                    var res = JsonConvert.DeserializeObject<List<ProblemChecklist>>(result);
+                    if (res.Count != 0)
+                    {
+                        Checklists.AddRange(res);
+                    }
+                }
+                
+            }
+        }
+        public AsyncCommand SendChecklist { get; set; }
+        public async Task sendChecklist() 
+        {
+            using (App.client = new HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
+                var checklist = new ProblemChecklist() { ProblemId = ProblemId, ProblemName = Check, IsChecked = false };
+                var json = JsonConvert.SerializeObject(checklist);
+                var con = new StringContent(json);
+
+                con.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                var req = await App.client.PostAsync(App.localUrl + $"api/ProblemComments", con);
+
+                var dson = await req.Content.ReadAsStringAsync();
+                var res2 = JsonConvert.DeserializeObject<ProblemChecklist>(dson);
+                Check = string.Empty;
+                if (req.IsSuccessStatusCode)
+                {
+                    Checklists.Add(res2);
+                }
+            }
+        }
+
     }
 }

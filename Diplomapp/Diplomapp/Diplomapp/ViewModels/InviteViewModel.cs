@@ -20,6 +20,7 @@ namespace Diplomapp.ViewModels
             command = new AsyncCommand(getinv);
             Acceptinv = new AsyncCommand<Invite>(acceptinv);
             Decline = new AsyncCommand<Invite> (decline);
+            Empty = true;
         }
         public ObservableRangeCollection<Invite> Invites { get; set; }
         public AsyncCommand command { get; set; }
@@ -33,11 +34,18 @@ namespace Diplomapp.ViewModels
                 var invites = JsonConvert.DeserializeObject<List<Invite>>(json);
                 if (invites.Count > 0)
                 {
+                    Empty = false;
                     Invites.AddRange(invites);
+                }
+                else
+                {
+                    Empty = true;
                 }
 
             }
         }
+        bool empty;
+        public bool Empty { get => empty; set => SetProperty(ref empty, value); }
         public AsyncCommand<Invite> Acceptinv { get; set; }
         async Task acceptinv(Invite invite)
         {
@@ -67,7 +75,7 @@ namespace Diplomapp.ViewModels
                 var res = await App.client.DeleteAsync(App.localUrl + "api/Invites/" + invite.Id);
 
             }
-                Invites.Remove(invite);
+            Invites.Remove(invite);
         }
     }
 

@@ -47,5 +47,13 @@ namespace DiplomServer.Models
         public System.Data.Entity.DbSet<DiplomServer.Models.ProblemChecklist> ProblemChecklists { get; set; }
 
         public System.Data.Entity.DbSet<DiplomServer.Models.ProblemComment> ProblemComments { get; set; }
+
+        public System.Data.Entity.DbSet<DiplomServer.Models.TasksFile> TasksFiles { get; set; }
+
+        public System.Data.Entity.DbSet<DiplomServer.Models.ProjectFile> ProjectFiles { get; set; }
+
+        public System.Data.Entity.DbSet<DiplomServer.Models.UserInfo> UserInfoes { get; set; }
+
+        public System.Data.Entity.DbSet<DiplomServer.Models.ProjectInfo> ProjectInfoes { get; set; }
     }
 }

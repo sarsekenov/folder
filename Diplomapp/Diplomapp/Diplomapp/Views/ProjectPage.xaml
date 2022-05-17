@@ -5,6 +5,7 @@
             xmlns:model="clr-namespace:Diplomapp.Models"
              x:Class="Diplomapp.Views.ProjectPage"
             xmlns:xtc ="http://xamarin.com/schemas/2020/toolkit"
+            xmlns:ess="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
             >
     <TabbedPage.BindingContext>
         <viewmodel:ProjectPageViewModel/>
@@ -17,10 +18,20 @@
     
         <ContentPage.Content>
             <StackLayout>
-                <Label Text="{Binding OwnerId}"/>
                 <Label Text="{Binding Name}"/>
-                <Entry  Text="{Binding Description}" />
-            </StackLayout>            
+                <Entry Text="{Binding Description}" />
+                <StackLayout>
+                    <Label Text=" Aims of project"/>
+                    <Label Text="{Binding ProjectInfo.ProjectAims}"/>
+                    <Label Text="{Binding ProjectInfo.ProjectsBudjet }"/>
+                    <Label Text="{Binding ProjectInfo.Zakazchik}"/>
+                    <Label Text=" StartDate"/>
+                    <Label Text="{Binding ProjectInfo.StartTime}"/>
+                    <Label Text=" EndDate"/>
+                    <Label Text="{Binding ProjectInfo.EndTime}"/>
+                </StackLayout>
+                <Button Text=" " Command="{Binding Pick}"/>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
     <ContentPage Title="Команда" >
@@ -35,7 +46,6 @@
                 ItemsSource="{Binding Members}"
                 RefreshCommand="{Binding getempl}"
                 IsPullToRefreshEnabled="True"
-                
                 >
                 <ListView.Header>
                     <StackLayout Orientation="Horizontal">
@@ -47,8 +57,7 @@
                         <ViewCell>
                             <Frame>
                                 <StackLayout>
-                                    <Label Text="{Binding Id}"/>
-                                    <Label Text="{Binding ProjectID}"/>
+                                    <Label Text="{Binding UserName}"/>
                                     <Label Text="{Binding Position}"/>
                                     <Label Text="{Binding Role}"/>
                                 </StackLayout>
@@ -61,22 +70,34 @@
     </ContentPage>
     <ContentPage Title="Финансы" >
         <StackLayout>
-            <ListView>
+
+            <Label Padding="10">Траты на сотрудников</Label>
+            <ListView ItemsSource="{Binding Salaries}" >
                 <ListView.Header>
-                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
-                        <Label Grid.Column="0"  Text="Сотрудник"/>
-                        <Label Grid.Column="1" Text= "Ставка"/>
-                        <Label Grid.Column="2" Text=" Зарплата"/>
+                    <Grid ColumnDefinitions="Auto,Auto,Auto">
+                        <Frame  Grid.Column="0" BorderColor="Gray"><Label VerticalOptions="CenterAndExpand" Text="Сотрудник"/></Frame>
+                        <Frame  Grid.Column="1" BorderColor="Gray">
+                            <Label VerticalOptions="FillAndExpand" Text= "Ставка"/>
+                        </Frame>
+                        <Frame Grid.Column="2"  BorderColor="Gray">
+                            <Label VerticalOptions="CenterAndExpand" Text=" Зарплата"/></Frame>
+                        
                     </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
-                                    <Label Grid.Column="0" />
-                                    <Label Grid.Column="1" />
-                                    <Label Grid.Column="2" />
+                                <Grid ColumnDefinitions="Auto,Auto,Auto">
+                                    <Frame Grid.Column="0" BorderColor="Gray">
+                                        <Label   Text="Сотрудник"/>
+                                    </Frame >
+                                    <Frame Grid.Column="1" BorderColor="Gray">
+                                        <Label  Text= "Ставка"/>
+                                    </Frame >
+                                    <Frame Grid.Column="2" BorderColor="Gray">
+                                        <Label  Text=" Зарплата"/>
+                                    </Frame>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>
@@ -85,14 +106,17 @@
                 <ListView.Footer>
                     <Button Text="Рассчитать"/>
                 </ListView.Footer>
-                
+            
             </ListView>
-            <ListView >
+            <Label Padding="10"> Траты на оборудование </Label>
+            <ListView ItemsSource="{Binding oborudovanies}" >
                 <ListView.Header>
                     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
-                        <Label Grid.Column="0"  Text="Сотрудник"/>
-                        <Label Grid.Column="1" Text= "Ставка"/>
-                        <Label Grid.Column="2" Text=" Зарплата"/>
+
+                        <Frame BorderColor="Gray" Grid.Column="0"><Label   Text="Оборудование"/></Frame>
+                        <Frame Grid.Column="1" BorderColor="Gray"><Label  Text= "Eденица измерения"/></Frame>
+                        <Frame Grid.Column="2" BorderColor="Gray"><Label  Text="Цена"/></Frame>
+                        <Frame Grid.Column="3" BorderColor="Gray"><Label  Text="Количество"/></Frame>
                     </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
@@ -100,9 +124,12 @@
                         <ViewCell>
                             <StackLayout>
                                 <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
-                                    <Label Grid.Column="0" />
-                                    <Label Grid.Column="1" />
-                                    <Label Grid.Column="2" />
+                                    <Frame Grid.Column="0" BorderColor="Gray"><Label Text="{Binding Name}"/></Frame>
+                                    <Frame Grid.Column="1" BorderColor="Gray">
+                                        <Label Text="{Binding Measure}" />
+                                    </Frame >
+                                    <Frame Grid.Column="2" BorderColor="Gray"><Label Text="{Binding Count}" /></Frame>
+                                    <Frame Grid.Column="3" BorderColor="Gray"><Label Text="{Binding Price}" /></Frame>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>

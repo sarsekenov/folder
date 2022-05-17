@@ -18,9 +18,9 @@ namespace DiplomServer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/ProblemChecklists
-        public IQueryable<ProblemChecklist> GetProblemChecklists()
+        public IQueryable<ProblemChecklist> GetProblemChecklists(int id)
         {
-            return db.ProblemChecklists;
+            return db.ProblemChecklists.Where(c=>c.ProblemId==id);
         }
 
         // GET: api/ProblemChecklists/5

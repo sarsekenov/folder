@@ -8,28 +8,27 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using Xamarin.Essentials;
 namespace Diplomapp.ViewModels
 {
-
-[QueryProperty(nameof(Name), "name")]// Project Name
-[QueryProperty(nameof(Id), "Id")] // Project Id
-[QueryProperty(nameof(OwnerId), "OwnerId")]
-[QueryProperty(nameof(Description), "Description")]
-    public class ProjectPageViewModel:BaseViewModel
+    [QueryProperty(nameof(Name), "name")]// Project Name
+    [QueryProperty(nameof(Id), "Id")] // Project Id
+    [QueryProperty(nameof(OwnerId), "OwnerId")]
+    [QueryProperty(nameof(Description), "Description")]
+    public class ProjectPageViewModel : BaseViewModel
     {
         string name;
         int id;
-        public string Name { get=>name; set=>SetProperty(ref name,value); }
-        public int Id { get=>id; set=>SetProperty(ref id,value); }
+        public string Name { get => name; set => SetProperty(ref name, value); }
+        public int Id { get => id; set => SetProperty(ref id, value); }
         string description;
         string ownerId;
-        public string OwnerId { get=> ownerId; set=>SetProperty(ref ownerId,value); }
-        public string Description { get=>description; set=>SetProperty(ref description,value); }
-        
+        public string OwnerId { get => ownerId; set => SetProperty(ref ownerId, value); }
+        public string Description { get => description; set => SetProperty(ref description, value); }
+
         //Project project;
         //public Project Project { get=>project; set=> SetProperty(ref project,value); }
-        public ProjectPageViewModel() 
+        public ProjectPageViewModel()
         {
             initialize = new AsyncCommand(Init);
             GetProblems = new AsyncCommand(getProblems);
@@ -38,13 +37,81 @@ namespace Diplomapp.ViewModels
             getempl = new AsyncCommand(GetEmployees);
             Members = new ObservableRangeCollection<ProjectMember>();
             Members.Clear();
+            oborudovanies = new ObservableRangeCollection<oborudovanie>();
+            Salaries = new ObservableRangeCollection<Salary>();
             Problems = new ObservableRangeCollection<Problem>();
+            GetSalaries = new AsyncCommand(getSalaries);
             SelectedProblem = new AsyncCommand<Problem>(selectedProblem);
+            Getoborudovanies = new AsyncCommand(getobor);
+            Pick = new AsyncCommand(pickFile);
+            ProjectInfo = new ProjectInfo();
+            GetInfo = new AsyncCommand(getinfo);
         }
-        public async Task Init() 
-        { 
-            await getempl.ExecuteAsync();
+        async Task getinfo()
+        {
+            using (App.client = new System.Net.Http.HttpClient()) 
+            {
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                var res = await App.client.GetAsync(App.localUrl + $"api/ProjectInfoes?id={Id}");
+                
+                if (res.IsSuccessStatusCode) 
+                {
+                    var json = await res.Content.ReadAsStringAsync();
+                    var info = JsonConvert.DeserializeObject<ProjectInfo>(json);
+                    ProjectInfo = info;
+                }
+            }
+        }
+        public AsyncCommand GetInfo { get; set; }
+        ProjectInfo projectinfo;
+        public ProjectInfo ProjectInfo { get => projectinfo; set => SetProperty(ref projectinfo, value); }
+        public ObservableRangeCollection<Salary> Salaries { get; set; }
+        public ObservableRangeCollection<oborudovanie> oborudovanies { get; set; }
+        
+        public AsyncCommand GetSalaries { get; set; }
+        public async Task getSalaries()
+        {
+            using (App.client = new System.Net.Http.HttpClient()) 
+            {
+                
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                var res = await App.client.GetAsync(App.localUrl + $"GetProjectSalaries?id={Id}");
+                if (res.IsSuccessStatusCode) 
+                {
+                    var result = await res.Content.ReadAsStringAsync();
+                    var salaries = JsonConvert.DeserializeObject<List<Salary>>(result);
+                    if (salaries.Count > 0) 
+                    {
+                        Salaries.Clear();
+                        Salaries.AddRange(salaries);
+                    }
+                }
+                
+            }
+        }
+        public AsyncCommand Getoborudovanies { get; set; }
+        public async Task getobor() 
+        {
+            using (App.client = new System.Net.Http.HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                var res = await App.client.GetAsync(App.localUrl + $"GetProjectoborudovanies?id={Id}");
+                if (res.IsSuccessStatusCode)
+                {
+                    var result = await res.Content.ReadAsStringAsync();
+                    var salaries = JsonConvert.DeserializeObject<List<oborudovanie>>(result);
+                    oborudovanies.Clear();
+                    oborudovanies.AddRange(salaries);
+                }
+            }
+        }
 
+        public async Task Init() 
+        {
+            await GetInfo.ExecuteAsync();
+            await getempl.ExecuteAsync();
+            await GetSalaries.ExecuteAsync();
+            await Getoborudovanies.ExecuteAsync();
         }
         public AsyncCommand initialize { get; set; }
         public AsyncCommand getempl { get; set; }
@@ -56,6 +123,18 @@ namespace Diplomapp.ViewModels
         {
             await Shell.Current.GoToAsync($"{nameof(TaskDetailPage)}?Id={Id}");
         }
+        public AsyncCommand Pick { get; set; }
+        public async Task pickFile() 
+        {
+            var files = await Xamarin.Essentials.FilePicker.PickMultipleAsync();
+            if (files == null)
+                return;
+            foreach (var file in files) 
+            {
+              var stream =  await file.OpenReadAsync();
+              
+            }
+        }
         public AsyncCommand CreateTask { get; set; }
         public async Task GetEmployees() // Получаем всех работников этого проекта 
         {
@@ -64,16 +143,22 @@ namespace Diplomapp.ViewModels
             using (App.client = new System.Net.Http.HttpClient())
             {
                 App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
-                var json = await App.client.GetStringAsync(App.localUrl + $"GetbyId?Id={Id}");// обращаемся к контроллеру 
-                var employees = JsonConvert.DeserializeObject<List<ProjectMember>>(json);
-                if(employees.Count > 0) 
+                var json = await App.client.GetAsync(App.localUrl + $"GetbyId?Id={Id}");// обращаемся к контроллеру 
+                if (json.IsSuccessStatusCode) 
                 {
-                    Members.AddRange(employees);
-                    foreach (var employee in employees) 
+                    var result = await json.Content.ReadAsStringAsync();
+                    var employees = JsonConvert.DeserializeObject<List<ProjectMember>>(result);
+                    if(employees.Count > 0) 
                     {
-                        ProjectMembers.Add(employee);
+                        Members.AddRange(employees);
+                        foreach (var employee in employees) 
+                        {
+                            ProjectMembers.Add(employee);
+                            //var res = App.client.GetStringAsync(App.localUrl + $"api/Account/Getmailbyid?id={employee.UserId}");
+                        }
                     }
                 }
+                
                 
             }
             
@@ -96,7 +181,6 @@ namespace Diplomapp.ViewModels
                 var problems = JsonConvert.DeserializeObject<List<Problem>>(res);
                 if (problems.Count > 0) 
                 {
-                    
                     Problems.AddRange(problems);
                 }
             }

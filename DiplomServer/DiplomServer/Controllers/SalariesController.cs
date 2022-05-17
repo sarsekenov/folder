@@ -22,8 +22,10 @@ namespace DiplomServer.Controllers
         public IQueryable<Salary> GetSalaries()
         {
             string user = User.Identity.GetUserId();
-            return db.Salaries.Where(c=>c.UserId==user);
-        } 
+            return db.Salaries.Where(c => c.UserId == user);
+        }
+
+        [Route ("GetProjectSalaries")]
         public IQueryable<Salary> GetProjectSalaries(int id)
         {
             return db.Salaries.Where(c=>c.ProjectId == id);

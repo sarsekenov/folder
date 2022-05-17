@@ -80,9 +80,11 @@ namespace Diplomapp.ViewModels
             
             
             var response = await  client.PostAsync(App.localUrl +"/api/Account/Register", content);
+            
+
             if (response.IsSuccessStatusCode)
             {
-               await Shell.Current.GoToAsync(nameof(LoginPage));
+               await Shell.Current.GoToAsync("///" + nameof(LoginPage));
             }
             else 
             {

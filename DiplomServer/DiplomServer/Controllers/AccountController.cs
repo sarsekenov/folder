@@ -56,6 +56,14 @@ namespace DiplomServer.Controllers
         {
             return User.Identity.Name;
         }
+        [AllowAnonymous]
+        [Route("Getmailbyid")]
+        public string Getmailid(string id)
+        {
+            var name =  UserManager.FindById(id);
+            return name.Email;
+        }
+
         public ApplicationUserManager UserManager
         {
             get

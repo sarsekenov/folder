@@ -9,27 +9,27 @@
         <viewmodel:TaskDetailViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Behaviors>
-        <xts:EventToCommandBehavior EventName="Appearing" Command="{Binding .}"/>
+        <xts:EventToCommandBehavior EventName="Appearing" Command="{Binding Initial}"/>
     </ContentPage.Behaviors>
     <ContentPage.Content>
 
-        <StackLayout>
+        <StackLayout BackgroundColor="Coral">
             <StackLayout >
                 <Label Text = "{Binding Name}"/>
                 <Label Text = "{Binding Description}"/>
                 <Label Text = "{Binding Creationtime}"/>
                 <Label Text = "{Binding Deadline}"/>
-
             </StackLayout>
-            <StackLayout  x:DataType="{x:Null}">
-                <Picker Title="Select the employee" ItemsSource = "{Binding Members}" ItemDisplayBinding="{Binding UserName}" SelectedItem="{Binding TasksUserName ,Mode=TwoWay}" >
+            <StackLayout  x:DataType="{x:Null}" BackgroundColor = "LightSlateGray">
+                <Picker Title="Select the employee" ItemsSource = "{Binding Members}" ItemDisplayBinding="{Binding UserName}"
+                        SelectedItem="{Binding TasksUserName ,Mode=TwoWay}" >
 
                 </Picker>
 
             </StackLayout>
 
-            <StackLayout>
-                <xts:Expander IsExpanded="False">
+            <StackLayout Spacing="10" BackgroundColor="Bisque">
+                <xts:Expander IsExpanded="False" >
                     <xts:Expander.Header>
                         <Label Text="Checks"/>
                     </xts:Expander.Header>
@@ -47,6 +47,7 @@
                             </ListView.ItemTemplate>
                             <ListView.Footer>
                                 <StackLayout>
+                                    <Entry Text="{Binding }"/>
                                     <Button Text="add checkbox" Command="{Binding .}"/>
                                 </StackLayout>
                             </ListView.Footer>
@@ -58,16 +59,19 @@
                 <ListView ItemsSource="{Binding Comments}">
                     <ListView.Header>
                         <StackLayout>
-                            <Entry />
-                            <Button Text="Add comment"/>
+                            <Entry Text="{Binding Comment} " Placeholder="Type your comment" />
+                            <Button Text="Add comment" Command="{Binding SendComment}"/>
                         </StackLayout>
                     </ListView.Header>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding Text}"/>
-                                </StackLayout>
+                                <Frame BorderColor="LightGray">
+                                    <StackLayout>
+                                        <Label Text="{Binding Author}"/>
+                                        <Label Text="{Binding Text}"/>
+                                    </StackLayout>
+                                </Frame>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using DiplomServer.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DiplomServer.Controllers
 {
@@ -20,6 +21,7 @@ namespace DiplomServer.Controllers
         // GET: api/Problems
         public IQueryable<Problem> GetProblems()
         {
+            
             return db.Problems;
         }
         [Route("GetProblemsbyId")]

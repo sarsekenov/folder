@@ -85,7 +85,7 @@ namespace Diplomapp.ViewModels
 
         }
         public string Email { get=>email; set=>SetProperty(ref email,value); }
-        async Task selected(user user) 
+        async Task selected(user user)
         {
             if (user == null)
                 return;
