@@ -13,11 +13,13 @@ using DiplomServer.Models;
 
 namespace DiplomServer.Controllers
 {
+    [Authorize]
     public class ProblemCommentsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/ProblemComments
+        [Route("GetProblemComments")]
         public IQueryable<ProblemComment> GetProblemComments(int id)
         {
             return db.ProblemComments.Where(c=>c.ProblemId==id);

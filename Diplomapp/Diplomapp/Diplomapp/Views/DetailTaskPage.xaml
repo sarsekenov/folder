@@ -4,12 +4,20 @@
              x:Class="Diplomapp.Views.DetailTaskPage"
              xmlns:xts="http://xamarin.com/schemas/2020/toolkit"
              xmlns:viewmodel="clr-namespace:Diplomapp.ViewModels"
+             x:Name="DetailTaskView "
              >
     <ContentPage.BindingContext>
         <viewmodel:TaskDetailViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xts:ItemTappedEventArgsConverter  x:Key="ItemSelectedEventArgsConverter" />
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Behaviors>
         <xts:EventToCommandBehavior EventName="Appearing" Command="{Binding Initial}"/>
+        
     </ContentPage.Behaviors>
     <ContentPage.Content>
 
@@ -17,7 +25,7 @@
             <StackLayout >
                 <Label Text = "{Binding Name}"/>
                 <Label Text = "{Binding Description}"/>
-                <Label Text = "{Binding Creationtime}"/>
+                <Label Text = "{Binding Creationtime}"/>              
                 <Label Text = "{Binding Deadline}"/>
             </StackLayout>
             <StackLayout  x:DataType="{x:Null}" BackgroundColor = "LightSlateGray">
@@ -34,12 +42,23 @@
                         <Label Text="Checks"/>
                     </xts:Expander.Header>
                     <xts:Expander.Content>
-                        <ListView ItemsSource="{Binding Checklists}">
+                        <ListView ItemsSource="{Binding Checklists}" VerticalOptions="Start" x:Name="abt">
+                            <ListView.Behaviors>
+                                <xts:EventToCommandBehavior EventName="ItemTapped" Command="{Binding Selectedcheck}"
+                                                            EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"/>
+
+                            </ListView.Behaviors>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Orientation="Horizontal">
-                                            <CheckBox BindingContext="{Binding IsChecked}"/>
+                                            <CheckBox BindingContext="{Binding IsChecked,Mode=TwoWay}" CheckedChanged="CheckBox_CheckedChanged" >
+                                                <!--<CheckBox.Behaviors>
+                                                    <xts:EventToCommandBehavior EventName="CheckedChanged" Command = "{Binding Path = BindingContext.Selectedcheck,
+                                                        Source = { x:Reference DetailTaskView}} " CommandParameter = "{Binding Path = BindingContext, 
+                                                        Source = { x:Reference abt }}"/>
+                                                </CheckBox.Behaviors>-->
+                                            </CheckBox>
                                             <Label Text="{Binding ProblemName}"/>
                                         </StackLayout>
                                     </ViewCell>
@@ -47,8 +66,8 @@
                             </ListView.ItemTemplate>
                             <ListView.Footer>
                                 <StackLayout>
-                                    <Entry Text="{Binding }"/>
-                                    <Button Text="add checkbox" Command="{Binding .}"/>
+                                    <Entry Text="{Binding Title}"/>
+                                    <Button Text="add checkbox" Command="{Binding addCheck}"/>
                                 </StackLayout>
                             </ListView.Footer>
                         </ListView>
@@ -57,12 +76,12 @@
             </StackLayout>
             <StackLayout>
                 <ListView ItemsSource="{Binding Comments}">
-                    <ListView.Header>
+                    <ListView.Footer>
                         <StackLayout>
                             <Entry Text="{Binding Comment} " Placeholder="Type your comment" />
                             <Button Text="Add comment" Command="{Binding SendComment}"/>
                         </StackLayout>
-                    </ListView.Header>
+                    </ListView.Footer>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

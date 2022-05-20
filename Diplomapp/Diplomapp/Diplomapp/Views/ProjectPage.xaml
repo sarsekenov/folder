@@ -68,46 +68,63 @@
             </ListView>
         </StackLayout>
     </ContentPage>
+    
     <ContentPage Title="Финансы" >
         <StackLayout>
-
             <Label Padding="10">Траты на сотрудников</Label>
-            <ListView ItemsSource="{Binding Salaries}" >
-                <ListView.Header>
-                    <Grid ColumnDefinitions="Auto,Auto,Auto">
-                        <Frame  Grid.Column="0" BorderColor="Gray"><Label VerticalOptions="CenterAndExpand" Text="Сотрудник"/></Frame>
-                        <Frame  Grid.Column="1" BorderColor="Gray">
-                            <Label VerticalOptions="FillAndExpand" Text= "Ставка"/>
+            <ListView ItemsSource="{Binding Salaries}">
+                <ListView.Header >
+                    <Grid ColumnDefinitions="140,140,140">
+                        <Frame Grid.Column="0" BorderColor="Black" BackgroundColor="#f6f6f6">
+                            <Label Text="Сотрудник"/>
                         </Frame>
-                        <Frame Grid.Column="2"  BorderColor="Gray">
-                            <Label VerticalOptions="CenterAndExpand" Text=" Зарплата"/></Frame>
-                        
+                        <Frame  Grid.Column="1" BorderColor="Black" BackgroundColor="#f6f6f6">
+                            <Label Text= "Ставка"/>
+                        </Frame>
+                        <Frame Grid.Column="2"  BorderColor="Black" BackgroundColor="#f6f6f6">
+                            <Label Text=" Зарплата"/>
+                        </Frame>
                     </Grid>
                 </ListView.Header>
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Grid ColumnDefinitions="Auto,Auto,Auto">
+                            <StackLayout Margin="0,5,0,5">
+                                <Grid ColumnDefinitions="140,140,140" >
                                     <Frame Grid.Column="0" BorderColor="Gray">
-                                        <Label   Text="Сотрудник"/>
-                                    </Frame >
+                                        <Label Text="{Binding UserId}"/>
+                                    </Frame>
                                     <Frame Grid.Column="1" BorderColor="Gray">
-                                        <Label  Text= "Ставка"/>
-                                    </Frame >
+                                        <Label Text= "{Binding stavka}"/>
+                                    </Frame>
                                     <Frame Grid.Column="2" BorderColor="Gray">
-                                        <Label  Text=" Зарплата"/>
+                                        <Label Text="{Binding zp}"/>
                                     </Frame>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                
                 <ListView.Footer>
-                    <Button Text="Рассчитать"/>
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" x:DataType="{x:Null}">
+                        <Picker Grid.Column="0" ItemsSource="{Binding Members}" ItemDisplayBinding="{Binding UserName}"
+                                SelectedItem="{Binding SelectedMember, Mode=TwoWay}">
+                            
+                        </Picker>
+                        <Entry Grid.Column="1" Text="{Binding Stavka}"></Entry>
+                        <Entry Grid.Column="2" Text="{Binding Zp}"/>
+                        <Button Text="Add" Grid.Column="3" Command="{Binding AddSal}"/>
+                    </Grid>
                 </ListView.Footer>
-            
             </ListView>
+            
+            
+            
+            
+            
+            
             <Label Padding="10"> Траты на оборудование </Label>
             <ListView ItemsSource="{Binding oborudovanies}" >
                 <ListView.Header>

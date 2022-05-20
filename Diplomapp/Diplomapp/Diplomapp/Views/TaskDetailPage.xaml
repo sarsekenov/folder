@@ -12,7 +12,7 @@
     </ContentPage.Behaviors>
     <ContentPage.Resources>
         <ResourceDictionary>
-            <xts:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+            <xts:ItemTappedEventArgsConverter  x:Key="ItemSelectedEventArgsConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>

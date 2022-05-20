@@ -30,6 +30,7 @@ namespace Diplomapp.ViewModels
         //public Project Project { get=>project; set=> SetProperty(ref project,value); }
         public ProjectPageViewModel()
         {
+            AddSal = new AsyncCommand(addSal);
             initialize = new AsyncCommand(Init);
             GetProblems = new AsyncCommand(getProblems);
             CreateTask = new AsyncCommand(createTask);
@@ -46,6 +47,8 @@ namespace Diplomapp.ViewModels
             Pick = new AsyncCommand(pickFile);
             ProjectInfo = new ProjectInfo();
             GetInfo = new AsyncCommand(getinfo);
+            ProjectMembers = new List<ProjectMember>();
+            SelectedMember = new ProjectMember();
         }
         async Task getinfo()
         {
@@ -119,7 +122,7 @@ namespace Diplomapp.ViewModels
         {
             await Shell.Current.GoToAsync(nameof(CreateInvitePage)+$"?name={Name}&Id={Id}");//передаем значения в форму 
         }
-        public async Task createTask() 
+        public async Task createTask()
         {
             await Shell.Current.GoToAsync($"{nameof(TaskDetailPage)}?Id={Id}");
         }
@@ -135,6 +138,17 @@ namespace Diplomapp.ViewModels
               
             }
         }
+        string stav;
+        public string Stavka { get => stav; set => SetProperty(ref stav, value); }
+        string zpa;
+        public string Zp { get => zpa; set => SetProperty(ref zpa, value); }
+        async Task addSal()
+        {
+            Salaries.Add(new Salary() { ProjectId = Id, stavka = Convert.ToSingle(Stavka), UserId = SelectedMember.UserID, zp = Convert.ToSingle(Zp)});
+        }
+        
+        public ProjectMember SelectedMember { get; set; }
+        public AsyncCommand AddSal { get; set; }
         public AsyncCommand CreateTask { get; set; }
         public async Task GetEmployees() // Получаем всех работников этого проекта 
         {
@@ -165,7 +179,7 @@ namespace Diplomapp.ViewModels
         }
         public ObservableRangeCollection<ProjectMember> Members { get; set; }
         public AsyncCommand invite { get; set; }
-        public static List<ProjectMember> ProjectMembers = new List<ProjectMember>();
+        public static List<ProjectMember> ProjectMembers { get; set; }
         public ObservableRangeCollection<Problem> Problems { get; set; }
         public AsyncCommand GetProblems { get; set; }
         public AsyncCommand<Problem> SelectedProblem { get; set; }

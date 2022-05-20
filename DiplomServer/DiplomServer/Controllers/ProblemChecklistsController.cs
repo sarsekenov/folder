@@ -13,16 +13,18 @@ using DiplomServer.Models;
 
 namespace DiplomServer.Controllers
 {
+    [Authorize]
     public class ProblemChecklistsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/ProblemChecklists
+        [Route("GetProblemChecklists")]        
         public IQueryable<ProblemChecklist> GetProblemChecklists(int id)
         {
             return db.ProblemChecklists.Where(c=>c.ProblemId==id);
         }
-
+        
         // GET: api/ProblemChecklists/5
         [ResponseType(typeof(ProblemChecklist))]
         public async Task<IHttpActionResult> GetProblemChecklist(int id)

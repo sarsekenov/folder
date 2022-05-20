@@ -14,6 +14,7 @@ using Microsoft.AspNet.Identity;
 
 namespace DiplomServer.Controllers
 {
+    [Authorize]
     public class ProblemMembersController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();

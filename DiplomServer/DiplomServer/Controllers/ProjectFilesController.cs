@@ -13,6 +13,7 @@ using DiplomServer.Models;
 
 namespace DiplomServer.Controllers
 {
+    [Authorize]
     public class ProjectFilesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();

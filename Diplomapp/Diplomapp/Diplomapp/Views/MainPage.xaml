@@ -10,15 +10,18 @@
              Shell.FlyoutBehavior ="Flyout"
              >
     <ContentPage.BindingContext>
-        <viewmodel:MainPageViewModel>
-        </viewmodel:MainPageViewModel>
+        <viewmodel:MainPageViewModel/>
     </ContentPage.BindingContext>
+    
     <ContentPage.Behaviors>
         <extensions:EventToCommandBehavior EventName="Appearing" Command="{Binding command}"/>
     </ContentPage.Behaviors>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Создать проект" Clicked = "ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
+    
+    
     <ContentPage.Content>
         <ListView HasUnevenRows="True" 
                   CachingStrategy="RecycleElement"
@@ -29,8 +32,8 @@
                   IsPullToRefreshEnabled="True"
                   ItemTapped ="ListView_ItemTapped"
                   ItemSelected="ListView_ItemSelected"
-                  RefreshCommand="{Binding command}"
-                  >
+                  RefreshCommand="{Binding command}">
+            
             <ListView.GroupHeaderTemplate>
                 <DataTemplate x:DataType = "{x:Null}">
                     <ViewCell>
@@ -40,6 +43,9 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
+            
+            
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell x:DataType="model:Project" >
@@ -58,6 +64,7 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            
             <ListView.Footer>
                 <StackLayout>
                     <Button Command = "{Binding command}" Text="Обновить"/>

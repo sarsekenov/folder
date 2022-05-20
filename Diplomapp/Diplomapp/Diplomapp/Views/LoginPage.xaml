@@ -5,13 +5,12 @@
              x:Class="Diplomapp.Views.LoginPage"
              x:DataType="viewmodel:LoginPageViewModel"
              Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="False"
-             
-             >
+             Shell.NavBarIsVisible="False">
     
     <ContentPage.BindingContext>
         <viewmodel:LoginPageViewModel/>
     </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout HorizontalOptions ="FillAndExpand" VerticalOptions="Center" Padding="30" >
             <Entry Placeholder = "Type your email"  Text="{Binding Username}"/>
@@ -24,4 +23,5 @@
             </Label>
         </StackLayout>
     </ContentPage.Content>
+    
 </ContentPage>

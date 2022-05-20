@@ -18,9 +18,9 @@
                 <Entry Placeholder=" Type the Budjet of project" Text="{Binding ProjectInfo.ProjectsBudjet,Mode=TwoWay}"/>
                 <Entry Placeholder=" Type the Name Of  Project Orderer" Text="{Binding ProjectInfo.Zakazchik,Mode=TwoWay}"/>
                 <Label Text=" StartDate"/>
-                <DatePicker Date="{Binding ProjectInfo.StartTime ,Mode=TwoWay}"/>
+                <DatePicker MinimumDate="01/01/2022" Date="{Binding ProjectInfo.StartTime ,Mode=TwoWay}"/>
                 <Label Text = " EndDate"/>
-                <DatePicker Date = "{Binding ProjectInfo.EndTime ,Mode=TwoWay}" />
+                <DatePicker MinimumDate="01/01/2022" Date = "{Binding ProjectInfo.EndTime ,Mode=TwoWay}" />
             </StackLayout>
             <Button Text="Save" Command="{Binding SendInfo}"/>
         </StackLayout>
