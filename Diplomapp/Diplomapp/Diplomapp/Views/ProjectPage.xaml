@@ -128,7 +128,7 @@
             <Label Padding="10"> Траты на оборудование </Label>
             <ListView ItemsSource="{Binding oborudovanies}" >
                 <ListView.Header>
-                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
+                    <Grid ColumnDefinitions="100,100,100,100">
 
                         <Frame BorderColor="Gray" Grid.Column="0"><Label   Text="Оборудование"/></Frame>
                         <Frame Grid.Column="1" BorderColor="Gray"><Label  Text= "Eденица измерения"/></Frame>
@@ -140,7 +140,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
+                                <Grid ColumnDefinitions="100,100,100,100">
                                     <Frame Grid.Column="0" BorderColor="Gray"><Label Text="{Binding Name}"/></Frame>
                                     <Frame Grid.Column="1" BorderColor="Gray">
                                         <Label Text="{Binding Measure}" />
@@ -153,7 +153,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Footer>
-                    <Label/>
+                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" x:DataType="{x:Null}">
+                        <Entry Grid.Column="0" Text="{Binding OborName,Mode=TwoWay}"/>
+                        <Entry Grid.Column="1" Text="{Binding Measure,Mode=TwoWay}"/>
+                        <Entry Grid.Column="2" Text="{Binding Count,Mode=TwoWay}"/>
+                        <Entry Grid.Column="3" Text="{Binding Price,Mode=TwoWay}"/>
+                        <Button Text="Add" Grid.Column="4" Command="{Binding Addobor}"/>
+                    </Grid>
                 </ListView.Footer>
                 
             </ListView>

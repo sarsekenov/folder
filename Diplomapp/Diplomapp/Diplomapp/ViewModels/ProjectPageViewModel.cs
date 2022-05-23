@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using System.Net.Http;
+
 namespace Diplomapp.ViewModels
 {
     [QueryProperty(nameof(Name), "name")]// Project Name
@@ -49,6 +51,7 @@ namespace Diplomapp.ViewModels
             GetInfo = new AsyncCommand(getinfo);
             ProjectMembers = new List<ProjectMember>();
             SelectedMember = new ProjectMember();
+            Addobor = new AsyncCommand(addobor);
         }
         async Task getinfo()
         {
@@ -83,8 +86,19 @@ namespace Diplomapp.ViewModels
                 {
                     var result = await res.Content.ReadAsStringAsync();
                     var salaries = JsonConvert.DeserializeObject<List<Salary>>(result);
+                    foreach (var sal in salaries) 
+                    {
+                        foreach (var mem in Members) 
+                        {
+                            if (mem.UserID == sal.UserId) 
+                            {
+                                sal.UserId = mem.UserName;
+                            }
+                        }
+                    }
                     if (salaries.Count > 0) 
                     {
+                        
                         Salaries.Clear();
                         Salaries.AddRange(salaries);
                     }
@@ -144,9 +158,50 @@ namespace Diplomapp.ViewModels
         public string Zp { get => zpa; set => SetProperty(ref zpa, value); }
         async Task addSal()
         {
-            Salaries.Add(new Salary() { ProjectId = Id, stavka = Convert.ToSingle(Stavka), UserId = SelectedMember.UserID, zp = Convert.ToSingle(Zp)});
+            using (App.client = new System.Net.Http.HttpClient()) 
+            {
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",App.accessToken);
+                var sal = new Salary() { ProjectId = Id, stavka = Convert.ToSingle(Stavka), UserId = SelectedMember.UserID, zp = Convert.ToSingle(Zp) };
+                var json = JsonConvert.SerializeObject(sal);
+                var con = new StringContent(json);
+                con.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                var res = await App.client.PostAsync(App.localUrl + "api/Salaries", con);
+                if (res.IsSuccessStatusCode) 
+                {
+                    var dson = await res.Content.ReadAsStringAsync();
+                    var salar = JsonConvert.DeserializeObject<Salary>(dson);
+                    salar.UserId = SelectedMember.UserName;
+                    Salaries.Add(salar);
+                }   
+            }
         }
-        
+        string oborname;
+        public string OborName { get=>oborname; set=>SetProperty(ref oborname,value); }
+        string measure;
+        public string Measure { get => measure; set => SetProperty(ref measure, value); }
+        float count;
+        public float Count { get => count; set => SetProperty(ref count, value); }
+        float price;
+        public float Price { get => price; set => SetProperty(ref price, value); }
+        public AsyncCommand Addobor { get; set; }
+        async Task addobor() 
+        {
+            using (App.client = new System.Net.Http.HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                var sal = new oborudovanie() { ProjectId = Id, Count = Count, Measure = Measure, Name = OborName, Price= Price};
+                var json = JsonConvert.SerializeObject(sal);
+                var con = new StringContent(json);
+                con.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                var res = await App.client.PostAsync(App.localUrl + "api/oborudovanies", con);
+                if (res.IsSuccessStatusCode)
+                {
+                    var dson = await res.Content.ReadAsStringAsync();
+                    var salar = JsonConvert.DeserializeObject<oborudovanie>(dson);
+                    oborudovanies.Add(salar);
+                }
+            }
+        }
         public ProjectMember SelectedMember { get; set; }
         public AsyncCommand AddSal { get; set; }
         public AsyncCommand CreateTask { get; set; }

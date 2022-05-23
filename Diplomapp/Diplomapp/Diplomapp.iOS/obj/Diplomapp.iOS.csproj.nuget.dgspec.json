@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {}
+    "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {}
   },
   "projects": {
-    "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {
+    "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
         "projectName": "Diplomapp.iOS",
-        "projectPath": "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
-        "packagesPath": "C:\\Users\\777\\.nuget\\packages\\",
-        "outputPath": "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\obj\\",
+        "projectPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\Diplomapp.iOS.csproj",
+        "packagesPath": "C:\\Users\\sars1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\777\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sars1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "xamarinios10"
@@ -32,8 +34,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
-                "projectPath": "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj"
+              "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
+                "projectPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj"
               }
             }
           }
@@ -65,22 +67,24 @@
         }
       }
     },
-    "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
+    "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
+        "projectUniqueName": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
         "projectName": "Diplomapp",
-        "projectPath": "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
-        "packagesPath": "C:\\Users\\777\\.nuget\\packages\\",
-        "outputPath": "G:\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\obj\\",
+        "projectPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\Diplomapp.csproj",
+        "packagesPath": "C:\\Users\\sars1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplomapp\\Diplomapp\\Diplomapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\777\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sars1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -146,7 +150,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

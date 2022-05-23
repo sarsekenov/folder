@@ -68,9 +68,7 @@ namespace Diplomapp.ViewModels
                 new KeyValuePair<string, string>("grant_type", "password")
             };
             var request = new HttpRequestMessage(HttpMethod.Post, App.localUrl + "Token");
-
             request.Content = new FormUrlEncodedContent(keyValues);
-
             var client = new HttpClient();
             try { var response = await client.SendAsync(request);
                 var content = await response.Content.ReadAsStringAsync();
@@ -85,19 +83,20 @@ namespace Diplomapp.ViewModels
                 }
                 else 
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error ", "No user with this username and password","Ok");
+                    await Application.Current.MainPage.DisplayAlert("Error "
+                        , "No user with this username and password","Ok");
                 }
             }
             catch 
             {
-                await Application.Current.MainPage.DisplayAlert("Error ", "Server cant authorize", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Error ",
+                    "Server cant authorize", "Ok");
             } }
             catch 
             {
-                await Application.Current.MainPage.DisplayAlert("Error ", "Server isnt working", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Error ",
+                    "Server isnt working", "Ok");
             }
-            
-            
         }
 
     }
