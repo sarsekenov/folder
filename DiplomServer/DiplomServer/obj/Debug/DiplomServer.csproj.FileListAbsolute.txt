@@ -712,3 +712,4 @@ G:\folder\DiplomServer\DiplomServer\obj\Debug\DiplomServer.csproj.CoreCompileInp
 G:\folder\DiplomServer\DiplomServer\obj\Debug\DiplomServer.csproj.CopyComplete
 G:\folder\DiplomServer\DiplomServer\obj\Debug\DiplomServer.dll
 G:\folder\DiplomServer\DiplomServer\obj\Debug\DiplomServer.pdb
+C:\Users\sars1\Desktop\folder\folder\DiplomServer\DiplomServer\obj\Debug\DiplomServer.csproj.AssemblyReference.cache
