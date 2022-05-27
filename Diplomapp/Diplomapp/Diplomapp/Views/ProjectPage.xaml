@@ -41,7 +41,6 @@
                         <xtc:EventToCommandBehavior EventName="ItemSelected" Command="{Binding Selectfiletodownload}"  EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"/>
                     </ListView.Behaviors>
                     <ListView.ItemTemplate>
-                        
                         <DataTemplate>
                             <ViewCell>
                                 <Label Text="{Binding Name}" />
@@ -217,6 +216,15 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title=" Чат">
+        <ContentPage.BindingContext>
+            <viewmodel:ChatViewModel>
+            </viewmodel:ChatViewModel>
+        </ContentPage.BindingContext>
+        <ContentPage.Content>
+            <StackLayout></StackLayout>
         </ContentPage.Content>
     </ContentPage>
 </TabbedPage>

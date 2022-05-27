@@ -81,8 +81,12 @@ namespace DiplomServer.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            db.ProblemChecklists.Add(problemChecklist);
+            if (!db.ProblemChecklists.Contains(problemChecklist))
+            {
+                db.ProblemChecklists.Add(problemChecklist); 
+            }
+            
+            
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = problemChecklist.Id }, problemChecklist);
@@ -108,7 +112,7 @@ namespace DiplomServer.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+        //        db.Dispose();
             }
             base.Dispose(disposing);
         }

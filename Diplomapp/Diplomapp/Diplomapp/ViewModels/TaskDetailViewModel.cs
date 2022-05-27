@@ -4,6 +4,7 @@ using MvvmHelpers.Commands;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -62,8 +63,10 @@ namespace Diplomapp.ViewModels
                 }
             }
             //Selectedempl = new AsyncCommand<ProjectMember>(selectedempl);
-            
-
+            TaskFiles = new ObservableRangeCollection<TasksFile>();
+            Getfiles = new AsyncCommand(getfilelist);
+            Pick = new AsyncCommand(pickFile);
+            Selectfiletodownload = new AsyncCommand<TasksFile>(selectedfiletodownload);
         }
 
 
@@ -104,7 +107,6 @@ namespace Diplomapp.ViewModels
             await GetChecklist.ExecuteAsync();
             await GetComments.ExecuteAsync();
         }
-
         public List<ProjectMember> Members { get; set; }
         public async Task putChanges() 
         {
@@ -123,7 +125,7 @@ namespace Diplomapp.ViewModels
 
                 var result = await res.Content.ReadAsStringAsync();
                 var dson = JsonConvert.DeserializeObject<Problem>(result);
-                ProblemMember.UserId = TasksUserName.UserID;
+                ProblemMember.UserId = TasksUserName?.UserID;
                 ProblemMember.ProblemId = dson.Id;
                 var json2 = JsonConvert.SerializeObject(ProblemMember);
                 
@@ -155,6 +157,7 @@ namespace Diplomapp.ViewModels
                 con2.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 var res2 = await App.client.PostAsync(App.localUrl + "api/ProblemMembers", con2);
                 await sendChecklist();
+
             }
         }
         ProjectMember tasksusername;
@@ -172,7 +175,7 @@ namespace Diplomapp.ViewModels
 
                     foreach (var member in Members) 
                     {
-                        if (res.UserId == member.UserID) 
+                        if (res.UserId == member.UserID)
                         {
                             TasksUserName = member;
                         }
@@ -187,6 +190,8 @@ namespace Diplomapp.ViewModels
         public AsyncCommand GetMember { get; set; }
         public ProjectMember SelectedMember { get; set; }
         
+        public ObservableRangeCollection<TasksFile> TaskFiles { get; set; }
+        public AsyncCommand Getfiles { get; set; }
         public AsyncCommand command { get; set; }
         public Problem Problem { get; set; }
         public ProblemMember ProblemMember { get; set; }
@@ -272,9 +277,9 @@ namespace Diplomapp.ViewModels
                 //var checklist = new ProblemChecklist() { ProblemId = ProblemId, ProblemName = Check, IsChecked = false };
                 foreach (var check in Checklists)
                 {
+                    check.ProblemId = ProblemId;
                     var json = JsonConvert.SerializeObject(check);
                     var con = new StringContent(json);
-
                     con.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                     var req = await App.client.PostAsync(App.localUrl + $"api/ProblemChecklists", con);
 
@@ -288,6 +293,78 @@ namespace Diplomapp.ViewModels
                 }
             }
         }
+        async Task getfilelist()
+        {
+            using (App.client = new HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                TaskFiles.Clear();
+                var res2 = await App.client.GetAsync(App.localUrl + $"GetTaskFilesbyid?id={Id}");
+                if (res2.IsSuccessStatusCode)
+                {
+                    var json = await res2.Content.ReadAsStringAsync();
+                    var files = JsonConvert.DeserializeObject<List<TasksFile>>(json);
+                    if (files.Count > 0)
+                    {
+                        TaskFiles.AddRange(files);
+                    }
+                }
+            }
+        }
+        public AsyncCommand Pick { get; set; }
+        public async Task pickFile()
+        {
+            var file = await Xamarin.Essentials.FilePicker.PickAsync();
+            if (file == null)
+                return;
+            using (App.client = new HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                var stream = await file.OpenReadAsync();
+                var bytes = new byte[stream.Length];
+                await stream.ReadAsync(bytes, 0, bytes.Length);
+                var cont = new MultipartFormDataContent();
+                var con = new ByteArrayContent(bytes);
+                con.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment")
+                {
+                    Name = file.FileName,
+                    FileName = Name,
+                    Size = Id
+                };
+                cont.Add(con);
+                var res = await App.client.PostAsync(App.localUrl + "SendTaskFiles", cont);
+                if (res.IsSuccessStatusCode)
+                {
+                    TaskFiles.Clear();
+                    var res2 = await App.client.GetAsync(App.localUrl + $"GetProjectFilesbyid?id={Id}");
+                    if (res2.IsSuccessStatusCode)
+                    {
+                        var json = await res2.Content.ReadAsStringAsync();
+                        var files = JsonConvert.DeserializeObject<List<TasksFile>>(json);
+                        if (files.Count > 0)
+                        {
+                            TaskFiles.AddRange(files);
+                        }
+                    }
+                }
+            }
+        }
+        public AsyncCommand<TasksFile> Selectfiletodownload { get; set; }
+        async Task selectedfiletodownload(TasksFile file)
+        {
+            using (App.client = new HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                var res = await App.client.GetAsync(App.localUrl + $"GetprFiles?path={file.Path + "/" + file.Name }");
+                if (res.IsSuccessStatusCode)
+                {
+                    var bfile = await res.Content.ReadAsByteArrayAsync();
+                    string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    string localFilename = file.Name;
 
+                    File.WriteAllBytes(documentsPath + "/" + localFilename, bfile);
+                }
+            }
+        }
     }
 }

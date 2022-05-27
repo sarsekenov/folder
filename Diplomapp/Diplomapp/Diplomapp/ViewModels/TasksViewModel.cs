@@ -40,7 +40,6 @@ namespace Diplomapp.ViewModels
         }
         async Task init() 
         {
-
             await getProjectid();
             await GetProblems.ExecuteAsync();
         }
@@ -62,8 +61,6 @@ namespace Diplomapp.ViewModels
                         var project = JsonConvert.DeserializeObject<Project>(json);
                         Projects.Add(project);
                     }
-
-                    
                 }
             }
         }
@@ -88,8 +85,6 @@ namespace Diplomapp.ViewModels
                         var problem = JsonConvert.DeserializeObject<Problem>(json);
                         Problems.Add(problem);
                     }
-
-
                     foreach (var mem in ProjectMembers) 
                     {
                         var name = Projects.Where(c=>c.Id == mem.ProjectID);

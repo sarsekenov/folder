@@ -18,11 +18,10 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <StackLayout >
+            <StackLayout>
                 <Entry Text="{Binding Problem.Name}"/>
                 <Entry Text="{Binding Problem.Description}"/>
                 <DatePicker MinimumDate="01/01/2022" Date="{Binding Problem.Deadline ,Mode=TwoWay}">
-                    
                 </DatePicker>
 
             </StackLayout>
@@ -35,7 +34,7 @@
             </StackLayout>
 
             <StackLayout>
-                <xts:Expander IsExpanded="False">
+                <!--<xts:Expander IsExpanded="False">
                     <xts:Expander.Header>
                         <Label Text="Checks"/>
                     </xts:Expander.Header>
@@ -59,7 +58,7 @@
                             </ListView.Footer>
                         </ListView>
                     </xts:Expander.Content>
-                </xts:Expander>
+                </xts:Expander>-->
             </StackLayout>
             <Button Text="Save" Command="{Binding command}"/>
         </StackLayout>

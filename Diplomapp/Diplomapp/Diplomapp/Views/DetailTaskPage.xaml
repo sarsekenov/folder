@@ -12,7 +12,6 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <xts:ItemTappedEventArgsConverter  x:Key="ItemSelectedEventArgsConverter" />
-            
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Behaviors>
@@ -21,7 +20,7 @@
     </ContentPage.Behaviors>
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="Coral">
+        <StackLayout >
             <StackLayout >
                 <Label Text = "{Binding Name}"/>
                 <Label Text = "{Binding Description}"/>
@@ -96,6 +95,19 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
+            <Button Text="Добавить файл в проект" Command="{Binding Pick}"/>
+            <ListView  ItemsSource="{Binding TaskFiles}">
+                <ListView.Behaviors>
+                    <xts:EventToCommandBehavior EventName="ItemSelected" Command="{Binding Selectfiletodownload}"  EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"/>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Name}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button Text="Save" Command="{Binding command1}"/>
         </StackLayout>
     </ContentPage.Content>

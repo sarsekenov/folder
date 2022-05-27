@@ -14,7 +14,7 @@
             <Entry Text="{Binding Description}" />
             <StackLayout>
                 <Label Text=" Aims of project"/>
-                <Entry Placeholder="Type the aims of project"  Text="{Binding ProjectInfo.ProjectAims, Mode=TwoWay}"/> 
+                <Entry Placeholder=" Type the aims of project"  Text="{Binding ProjectInfo.ProjectAims, Mode=TwoWay}"/> 
                 <Entry Placeholder=" Type the Budjet of project" Text="{Binding ProjectInfo.ProjectsBudjet,Mode=TwoWay}"/>
                 <Entry Placeholder=" Type the Name Of  Project Orderer" Text="{Binding ProjectInfo.Zakazchik,Mode=TwoWay}"/>
                 <Label Text=" StartDate"/>
