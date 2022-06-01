@@ -26,7 +26,6 @@ namespace Diplomapp.Views
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             ((ListView)sender).SelectedItem = null;
-            
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

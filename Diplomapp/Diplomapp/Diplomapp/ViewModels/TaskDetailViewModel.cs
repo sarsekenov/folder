@@ -186,7 +186,6 @@ namespace Diplomapp.ViewModels
             }
         }
         public AsyncCommand command1 { get; set; }
-
         public AsyncCommand GetMember { get; set; }
         public ProjectMember SelectedMember { get; set; }
         

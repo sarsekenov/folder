@@ -10,6 +10,9 @@ namespace Diplomapp.ViewModels
         public ChatViewModel() 
         {
             connection = new HubConnection(App.localUrl + "/chat");
+            connection.ConnectionId = App.userId;
+            
+            connection.Start();
         }
         HubConnection connection;
     }

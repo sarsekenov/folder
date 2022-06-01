@@ -33,9 +33,6 @@ namespace Diplomapp.Views
                 string res = await response.Content.ReadAsStringAsync();
                 Project = JsonConvert.DeserializeObject<Project>(res);
                 await Shell.Current.GoToAsync($"{nameof(SaveProject)}?name={Project.Name}&OwnerId={Project.OwnerId}&Description={Project.Description}&Id={Project.Id}");
-                
-                
-                
             }
         }
         public static  Project Project { get; set; }

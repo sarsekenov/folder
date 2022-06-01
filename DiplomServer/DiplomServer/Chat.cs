@@ -10,7 +10,7 @@ using AuthorizeAttribute = System.Web.Http.AuthorizeAttribute;
 
 namespace DiplomServer
 {
-    [Authorize]
+    
     public class Chat : Hub
     {
         List<ChatUser> Users = new List<ChatUser>();
@@ -27,8 +27,6 @@ namespace DiplomServer
         public void Connect(string userName)  
         {
             var id = Context.ConnectionId;
-
-
             if (Users.Count(x => x.ConnectionId == id) == 0)
             {
                 Users.Add(new ChatUser { ConnectionId = id, Name = userName });
