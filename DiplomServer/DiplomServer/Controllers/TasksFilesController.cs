@@ -13,7 +13,7 @@ using System.Web.Http.Description;
 using DiplomServer.Models;
 
 namespace DiplomServer.Controllers
-{
+{[Authorize]
     public class TasksFilesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -23,7 +23,7 @@ namespace DiplomServer.Controllers
         {
             return db.TasksFiles;
         }
-        [Route("GetTaskFilesyid")]
+        [Route("GetTaskFilesbyid")]
         public IQueryable<TasksFile> GetTasksFiles(int id)
         {
             return db.TasksFiles.Where(c=>c.TaskId == id);
@@ -63,13 +63,14 @@ namespace DiplomServer.Controllers
                 {
                     if (!string.IsNullOrEmpty(cont.Headers.ContentDisposition.FileName))
                     {
-                        var file = new ProjectFile();
+                        var file = new TasksFile();
                         file.Name = cont.Headers.ContentDisposition.Name;
-                        file.ProjectName = cont.Headers.ContentDisposition.FileName;
-                        file.ProjectId = (int)cont.Headers.ContentDisposition.Size;
-                        file.ProjectFolder = file.ProjectName + "-" + file.ProjectId;
+                        file.TaskName= cont.Headers.ContentDisposition.FileName;
+                        file.TaskId = (int)cont.Headers.ContentDisposition.Size;
+                        file.ProjectFolder = cont.Headers.ContentDisposition.FileNameStar;
+                        file.senderName = User.Identity.Name;
                         file.Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/" + file.ProjectFolder;
-                        db.ProjectFiles.Add(file);
+                        db.TasksFiles.Add(file);
                         if (!Directory.Exists(file.Path))
                         {
                             Directory.CreateDirectory(file.Path);
@@ -178,7 +179,7 @@ namespace DiplomServer.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }

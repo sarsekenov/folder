@@ -16,7 +16,7 @@ namespace Diplomapp.ViewModels
         public LoginPageViewModel()
         {
             register = new AsyncCommand(Registeraction);
-            login = new AsyncCommand(Login); 
+            login = new AsyncCommand(Login);
         }
         string username;
         string password;
@@ -79,20 +79,30 @@ namespace Diplomapp.ViewModels
                 {
                     App.accessToken = pairs.AccessToken;
                     App.email = Username;
-                    await Shell.Current.GoToAsync($"///{nameof(MainPage)}");
+                        using (App.client = new HttpClient())
+                        {
+                            App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                            var res2 = await App.client.GetAsync(App.localUrl + $"api/Account/GetId?mail={App.email}");
+                            if (res2.IsSuccessStatusCode)
+                            {
+                                var json2 = await res2.Content.ReadAsStringAsync();
+                                App.userId = JsonConvert.DeserializeObject<string>(json2);
+                            }
+                            await Shell.Current.GoToAsync($"///{nameof(MainPage)}");
+                        }
                 }
-                else 
+                else
                 {
                     await Application.Current.MainPage.DisplayAlert("Error "
                         , "No user with this username and password","Ok");
                 }
             }
-            catch 
+            catch(Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error ",
                     "Server cant authorize", "Ok");
             } }
-            catch 
+            catch
             {
                 await Application.Current.MainPage.DisplayAlert("Error ",
                     "Server isnt working", "Ok");

@@ -25,9 +25,10 @@ namespace Diplomapp.ViewModels
             ProjectGroups = new ObservableRangeCollection<Grouping<string, Project>>();
             GetAllUsers = new AsyncCommand(getid);
             command = new AsyncCommand(getlist);
-            
+            Empty = true;
         }
-
+        bool empty;
+        public bool Empty { get=>empty; set=>SetProperty(ref empty,value); }
         #region
         //public AsyncCommand GetCompanies { get; set; }
         public AsyncCommand GetAllUsers { get; set; }
@@ -53,6 +54,8 @@ namespace Diplomapp.ViewModels
                     {
                         ProjectGroups.Add(new Grouping<string, Project>("Projects", Projects));  
                     }
+            if (Projects.Count > 0 || MyProjects.Count > 0) { Empty = false; }
+            else { Empty = true; }
         }
         public async Task getMyProjects() // получить все компании пользователя 
         {

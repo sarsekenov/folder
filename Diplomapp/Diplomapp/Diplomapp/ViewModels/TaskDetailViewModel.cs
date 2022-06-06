@@ -16,11 +16,13 @@ namespace Diplomapp.ViewModels
 {
     [QueryProperty(nameof(Name), "Name")] //Problem Name
     [QueryProperty(nameof(Id), "Id")] //ProjectID
-    [QueryProperty(nameof(ProblemId),"ProblemId")] //
-    [QueryProperty(nameof(Description),"ProblemDescription")] //
-    [QueryProperty(nameof(Creationtime),"ProblemCreationtime")] //
-    [QueryProperty(nameof(Deadline),"ProblemDeadline")] //
-    
+    [QueryProperty(nameof(ProblemId), "ProblemId")] //
+    [QueryProperty(nameof(Description), "ProblemDescription")] //
+    [QueryProperty(nameof(Creationtime), "ProblemCreationtime")] //
+    [QueryProperty(nameof(Deadline), "ProblemDeadline")] //
+    [QueryProperty(nameof(ProjectName), "ProjectName")] //
+
+
 
     public class TaskDetailViewModel : BaseViewModel
     {
@@ -30,11 +32,12 @@ namespace Diplomapp.ViewModels
         public string Name { get => name; set => SetProperty(ref name, value); }
         int id;
         public int Id { get => id; set => SetProperty(ref id, value); }
-        string description,creationtime,deadline;
-        public string Description { get=>description; set=>SetProperty(ref description,value); }
-        public string Creationtime { get=>creationtime; set=>SetProperty(ref creationtime,value); }
-        public string Deadline { get=>deadline; set=>SetProperty(ref deadline,value); }
-
+        string description, creationtime, deadline;
+        public string Description { get => description; set => SetProperty(ref description, value); }
+        public string Creationtime { get => creationtime; set => SetProperty(ref creationtime, value); }
+        public string Deadline { get => deadline; set => SetProperty(ref deadline, value); }
+        string projectname;
+        public string ProjectName { get => projectname; set => SetProperty(ref projectname, value); }
         public TaskDetailViewModel()
         {
             Problem = new Problem();
@@ -104,6 +107,7 @@ namespace Diplomapp.ViewModels
         public AsyncCommand Initial { get; set; }
         public async Task init()
         {
+            await Getfiles.ExecuteAsync();
             await GetChecklist.ExecuteAsync();
             await GetComments.ExecuteAsync();
         }
@@ -298,7 +302,7 @@ namespace Diplomapp.ViewModels
             {
                 App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
                 TaskFiles.Clear();
-                var res2 = await App.client.GetAsync(App.localUrl + $"GetTaskFilesbyid?id={Id}");
+                var res2 = await App.client.GetAsync(App.localUrl + $"GetTaskFilesbyid?id={ProblemId}");
                 if (res2.IsSuccessStatusCode)
                 {
                     var json = await res2.Content.ReadAsStringAsync();
@@ -328,14 +332,15 @@ namespace Diplomapp.ViewModels
                 {
                     Name = file.FileName,
                     FileName = Name,
-                    Size = Id
+                    Size = ProblemId,
+                    FileNameStar = ProjectName + "-" + Id
                 };
                 cont.Add(con);
-                var res = await App.client.PostAsync(App.localUrl + "SendTaskFiles", cont);
+                var res = await App.client.PostAsync(App.localUrl + "SendTaskFile", cont);
                 if (res.IsSuccessStatusCode)
                 {
                     TaskFiles.Clear();
-                    var res2 = await App.client.GetAsync(App.localUrl + $"GetProjectFilesbyid?id={Id}");
+                    var res2 = await App.client.GetAsync(App.localUrl + $"GetTaskFilesbyid?id={ProblemId}");
                     if (res2.IsSuccessStatusCode)
                     {
                         var json = await res2.Content.ReadAsStringAsync();

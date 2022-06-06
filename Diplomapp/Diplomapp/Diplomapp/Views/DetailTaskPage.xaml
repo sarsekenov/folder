@@ -11,7 +11,8 @@
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
-            <xts:ItemTappedEventArgsConverter  x:Key="ItemSelectedEventArgsConverter" />
+            <xts:ItemTappedEventArgsConverter  x:Key="ItemTappedEventArgsConverter" />
+            <xts:ItemSelectedEventArgsConverter  x:Key="ItemSelectedEventArgsConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Behaviors>
@@ -44,7 +45,7 @@
                         <ListView ItemsSource="{Binding Checklists}" VerticalOptions="Start" x:Name="abt">
                             <ListView.Behaviors>
                                 <xts:EventToCommandBehavior EventName="ItemTapped" Command="{Binding Selectedcheck}"
-                                                            EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"/>
+                                                            EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}"/>
 
                             </ListView.Behaviors>
                             <ListView.ItemTemplate>

@@ -57,13 +57,20 @@
                 EventName="Appearing" Command="{Binding getempl}"
                 />
         </ContentPage.Behaviors>
-
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <xtc:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter"/>
+            </ResourceDictionary>
+        </ContentPage.Resources>
         <StackLayout>
             <ListView 
                 ItemsSource="{Binding Members}"
                 RefreshCommand="{Binding getempl}"
                 IsPullToRefreshEnabled="True"
                 >
+                <ListView.Behaviors>
+                    <xtc:EventToCommandBehavior EventName="ItemSelected" Command="{Binding selectedemployee}" EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}" />
+                </ListView.Behaviors>
                 <ListView.Header>
                     <StackLayout Orientation="Horizontal">
                         <Button HorizontalOptions="End" Text="Пригласить" Command="{Binding invite}"/>

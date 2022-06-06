@@ -14,7 +14,6 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout >
-            <Label Text="{Binding Id}"/>
             <Label Text="{Binding Name}"/>
             <Entry Text="{Binding Email}" Placeholder ="type users email" >
                 <Entry.Behaviors>
@@ -23,24 +22,47 @@
             </Entry>
             <Entry Text="{Binding Invitation}" Placeholder="Type the invitation text"/>
             <Entry Text="{Binding Role}" Placeholder = "Type the Role of new Member"/>
-            <Entry Text="{Binding Position}" Placeholder = "Type the Position of new Member"/>
+            <Entry Text="{Binding Position}" Placeholder = "Type the Position of new Member">
+                <Entry.Behaviors>
+                    <xtc:EventToCommandBehavior EventName="TextChanged" Command="{Binding getbyspec}"/>
+                </Entry.Behaviors>
+            </Entry>
             <Button Text="Отправить" Command="{Binding sendInvite}"/>
-            
-            <ListView ItemsSource="{Binding Users}"
+            <StackLayout Orientation="Horizontal" >
+                <ListView ItemsSource="{Binding Users}" WidthRequest="200"
                       >
-                <ListView.Behaviors>
-                    <xtc:EventToCommandBehavior EventName="ItemSelected" Command="{Binding Selecteditem}" EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"  />
-                </ListView.Behaviors>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Email}"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                    <ListView.Behaviors>
+                        <xtc:EventToCommandBehavior EventName="ItemSelected" Command="{Binding Selecteditem}" EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"  />
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Email}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView ItemsSource="{Binding UserInfos }">
+                    <ListView.Behaviors>
+                        <xtc:EventToCommandBehavior EventName="ItemSelected" Command="{Binding Selectedpos }" EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"  />
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Name}"/>
+                                        <Label Text="{Binding email}"/>
+                                    </StackLayout>
+                                    <Label Text = "{Binding AboutMe}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

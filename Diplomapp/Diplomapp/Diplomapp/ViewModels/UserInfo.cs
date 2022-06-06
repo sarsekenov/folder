@@ -9,25 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+
 namespace Diplomapp.ViewModels
 {
+    [QueryProperty(nameof(Id), "Id")]
     class UserInfo : BaseViewModel
     {
 
         public UserInfo()
         {
-            Info = new Models.UserInfo();
             getinfo = new AsyncCommand(getin);
             com = new AsyncCommand(comm);
         }
+        string id;
+        public string Id { get => id; set => SetProperty(ref id,value); }
         public AsyncCommand com { get; set; }
         async Task comm()
         {
             using (App.client = new System.Net.Http.HttpClient())
             {
                 App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
-                Info.UserId = App.userId;
-                var json = JsonConvert.SerializeObject(Info);
+                var json = JsonConvert.SerializeObject(new Models.UserInfo { AboutMe = AboutMe, UserId = App.userId, Name = Name, PhoneNumber = PhoneNumber }) ;
                 var con = new StringContent(json);
                 con.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
                 var res = await App.client.PostAsync(App.localUrl + "api/UserInfoes", con);
@@ -36,30 +38,63 @@ namespace Diplomapp.ViewModels
                     await Shell.Current.DisplayAlert("Done", "", "Ok");
                 }
             }
-
         }
+        string name;
+        public string Name { get => name; set => SetProperty(ref name, value); }
+        string phonenumber;
+        public string PhoneNumber { get => phonenumber; set => SetProperty(ref phonenumber, value); }
+        string aboutme;
+        public string AboutMe { get => aboutme; set => SetProperty(ref aboutme, value); }
         public AsyncCommand getinfo { get; set; }
-        async Task getin() 
+        async Task getin()
         {
             using (App.client = new System.Net.Http.HttpClient())
             {
                 App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
-                var json = await App.client.GetAsync(App.localUrl + $"api/UserInfoes?id={App.userId}");
-                if (json.IsSuccessStatusCode)
+
+                if (Id == null)
                 {
-                    var json2 = await json.Content.ReadAsStringAsync();
-                    var res = JsonConvert.DeserializeObject<Models.UserInfo>(json2);
-                    if (res != null)
+                    var json = await App.client.GetAsync(App.localUrl + $"api/UserInfoes");
+                    if (json.IsSuccessStatusCode)
                     {
-                        Info = res;
+                        var json2 = await json.Content.ReadAsStringAsync();
+                        var res = JsonConvert.DeserializeObject<List<Models.UserInfo>>(json2);
+                        if (res.Count > 0)
+                        {
+                            Name = res[res.Count - 1].Name;
+                            PhoneNumber = res[res.Count - 1].PhoneNumber;
+                            AboutMe = res[res.Count - 1].AboutMe;
+                        }
+                        else
+                        {
+                            Name = null;
+                            PhoneNumber = null;
+                            AboutMe = null;
+                        }
                     }
                 }
-                else { }
-                
+                else
+                {
+                    var json2 = await App.client.GetAsync(App.localUrl + $"getinfobyid?Id={Id}");
+                    if (json2.IsSuccessStatusCode)
+                    {
+                        var json3 = await json2.Content.ReadAsStringAsync();
+                        var res = JsonConvert.DeserializeObject<List<Models.UserInfo>>(json3);
+                        if (res.Count > 0)
+                        {
+                            Name = res[res.Count - 1].Name;
+                            PhoneNumber = res[res.Count - 1].PhoneNumber;
+                            AboutMe = res[res.Count - 1].AboutMe;
+                        }
+                        else
+                        {
+                            Name = null;
+                            PhoneNumber = null;
+                            AboutMe = null;
+                        }
+                    }
+                }
             }
-
         }
-            Models.UserInfo info;
-        public Models.UserInfo Info { get=>info; set=>SetProperty(ref info,value); }
     }
 }

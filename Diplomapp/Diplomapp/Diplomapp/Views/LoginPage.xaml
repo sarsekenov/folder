@@ -12,7 +12,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout HorizontalOptions ="FillAndExpand" VerticalOptions="Center" Padding="30" >
+        <StackLayout HorizontalOptions ="FillAndExpand" VerticalOptions="Center" Padding="30"  >
             <Entry Placeholder = "Type your email"  Text="{Binding Username}"/>
             <Entry IsPassword = "True" Placeholder=" Type Password" Text="{Binding Password}"/>
             <Button Text="Login" Command="{Binding login}"/>

@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using DiplomServer.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DiplomServer.Controllers
 {
+    [Authorize]
     public class UserInfoesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -20,9 +22,20 @@ namespace DiplomServer.Controllers
         // GET: api/UserInfoes
         public IQueryable<UserInfo> GetUserInfoes()
         {
-            return db.UserInfoes;
+            string user = User.Identity.GetUserId();
+            return db.UserInfoes.Where(c=>c.UserId == user);
         }
 
+        [Route("getinfobyid")]
+        public IQueryable<UserInfo> getinfobyid(string id)
+        {
+            return db.UserInfoes.Where(c => c.UserId == id);
+        }
+        [Route("getuserbyspec")]
+        public IQueryable<UserInfo> GetUserInfoesbyspec(string part)
+        {
+            return db.UserInfoes.Where(c=>c.AboutMe.Contains(part));
+        }
         // GET: api/UserInfoes/5
         [ResponseType(typeof(UserInfo))]
         public async Task<IHttpActionResult> GetUserInfo(int id)

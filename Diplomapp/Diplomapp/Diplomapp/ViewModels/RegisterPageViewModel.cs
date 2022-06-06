@@ -84,7 +84,8 @@ namespace Diplomapp.ViewModels
 
             if (response.IsSuccessStatusCode)
             {
-               await Shell.Current.GoToAsync("///" + nameof(LoginPage));
+                await Shell.Current.DisplayAlert("Аккаунт успешно зарегестрирован", "Поздравляем", "Ок");
+                await Shell.Current.GoToAsync("///" + nameof(LoginPage));
             }
             else 
             {

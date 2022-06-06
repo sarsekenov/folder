@@ -15,17 +15,62 @@ namespace Diplomapp.ViewModels
 {
     [QueryProperty(nameof(Name), "name")]
     [QueryProperty(nameof(Id), "Id")]
-    public class CreateInviteViewModel: BaseViewModel
+    public class CreateInviteViewModel : BaseViewModel
     {
-        public CreateInviteViewModel() 
+        public CreateInviteViewModel()
         {
             getemail = new AsyncCommand(getlistofUsers);
             Selecteditem = new AsyncCommand<user>(selected);
             sendInvite = new AsyncCommand(sendinv);
             Users = new ObservableRangeCollection<user>();
-            
+            getbyspec = new AsyncCommand(Getbyspec);
+            UserInfos = new ObservableRangeCollection<UserInfoPlus>();
+            Selectedpos = new AsyncCommand<UserInfoPlus>(selectedpos);
         }
 
+        public ObservableRangeCollection<UserInfoPlus> UserInfos { get; set; }
+        public AsyncCommand getbyspec { get; set; }
+        public AsyncCommand<UserInfoPlus> Selectedpos {get;set;}
+        async Task selectedpos(UserInfoPlus info) 
+        {
+            if (info == null)
+                return;
+            Position = info.AboutMe;
+            Email = info.email;
+            Users.Clear();
+            UserInfos.Clear();
+        }
+        async Task Getbyspec()
+       {
+            using (App.client = new System.Net.Http.HttpClient())
+            {
+                Users.Clear();
+                UserInfos.Clear();
+                App.client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
+                if ((Position != null)&&(Position!=string.Empty))
+                {
+                    var res = await App.client.GetAsync(App.localUrl + $"getuserbyspec?part={position}");
+                    if (res.IsSuccessStatusCode) 
+                    {
+                        var res2 = await res.Content.ReadAsStringAsync();
+                        var userlist = JsonConvert.DeserializeObject<List<Models.UserInfo>>(res2);
+                        if (userlist.Count > 0) 
+                        {
+                            foreach (var pos in userlist) 
+                            {
+                                var json2 = await App.client.GetAsync(App.localUrl + $"api/Account/Getmailbyid?id={pos.UserId}");
+                                if (json2.IsSuccessStatusCode)
+                                {
+                                    var users = await json2.Content.ReadAsStringAsync();
+                                    var result = JsonConvert.DeserializeObject<string>(users);
+                                    UserInfos.Add(new UserInfoPlus { UserId = pos.UserId, AboutMe = pos.AboutMe, email = result, Name = pos.Name, PhoneNumber = pos.PhoneNumber });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         string name;
         int id;
         public string Name { get => name; set => SetProperty(ref name, value); }
@@ -35,7 +80,7 @@ namespace Diplomapp.ViewModels
         string position;
         public string Role { get => role; set => SetProperty(ref role, value); }
         public string Position { get => position; set => SetProperty(ref position, value); }
-        
+
         string email;
         Invite invite;
         public Invite Invite { get=>invite; set=>SetProperty(ref invite,value); }

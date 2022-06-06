@@ -473,3 +473,6 @@ C:\Users\sars1\Desktop\folder\folder\Diplomapp\Diplomapp\Diplomapp.UWP\obj\x64\D
 G:\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Microsoft.AspNet.SignalR.Client.dll
 G:\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Microsoft.AspNet.SignalR.Client.pdb
 G:\folder\Diplomapp\Diplomapp\Diplomapp.UWP\obj\x64\Debug\Microsoft.AspNet.SignalR.Client\en-US\Microsoft.AspNet.SignalR.Client.Resources.resw
+C:\Users\sars1\Desktop\folder\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\sars1\Desktop\folder\folder\Diplomapp\Diplomapp\Diplomapp.UWP\bin\x64\Debug\Microsoft.AspNet.SignalR.Client.pdb
+C:\Users\sars1\Desktop\folder\folder\Diplomapp\Diplomapp\Diplomapp.UWP\obj\x64\Debug\Microsoft.AspNet.SignalR.Client\en-US\Microsoft.AspNet.SignalR.Client.Resources.resw

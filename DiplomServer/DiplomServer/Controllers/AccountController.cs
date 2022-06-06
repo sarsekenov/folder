@@ -29,6 +29,7 @@ namespace DiplomServer.Controllers
 
         public AccountController()
         {
+
         }
 
         public AccountController(ApplicationUserManager userManager,
@@ -59,7 +60,7 @@ namespace DiplomServer.Controllers
         [AllowAnonymous]
         [Route("Getmailbyid")]
         public string Getmailid(string id)
-        {
+       {
             var name =  UserManager.FindById(id);
             return name.Email;
         }

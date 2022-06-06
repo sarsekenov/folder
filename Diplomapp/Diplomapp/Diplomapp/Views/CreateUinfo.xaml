@@ -14,9 +14,9 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Type your Name" Text="{Binding Info.Name, Mode=TwoWay}"/>
-            <Entry Placeholder="Type your PhoneNumber" Text="{Binding Info.PhoneNumber, Mode=TwoWay}"/>
-            <Entry Placeholder="Tell us something about you" Text="{Binding Info.AboutMe, Mode=TwoWay}"/>
+            <Entry Placeholder="Type your Name" Text="{Binding Name, Mode=TwoWay}"/>
+            <Entry Placeholder="Type your PhoneNumber" Text="{Binding PhoneNumber, Mode=TwoWay}"/>
+            <Entry Placeholder="Tell us something about you" Text="{Binding AboutMe, Mode=TwoWay}"/>
             <Button Text="Save" Command="{Binding com}"/>
         </StackLayout>
     </ContentPage.Content>

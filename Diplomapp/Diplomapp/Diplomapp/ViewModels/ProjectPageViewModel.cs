@@ -56,7 +56,13 @@ namespace Diplomapp.ViewModels
             ProjectFiles = new ObservableRangeCollection<ProjectFile>();
             Getfilelist = new AsyncCommand(getfilelist);
             Selectfiletodownload = new AsyncCommand<ProjectFile>(selectedfiletodownload);
+            selectedemployee = new AsyncCommand<ProjectMember>(selectedempl);
         }
+        async Task selectedempl(ProjectMember member) 
+        {
+            await Shell.Current.GoToAsync(nameof(CreateUinfo) + $"?Id={member.UserID}");
+        }
+        public AsyncCommand<ProjectMember> selectedemployee { get; set; }
         async Task getinfo()
         {
             using (App.client = new System.Net.Http.HttpClient())
@@ -296,8 +302,6 @@ namespace Diplomapp.ViewModels
                         }
                     }
                 }
-                
-                
             }
             
         }
@@ -329,7 +333,7 @@ namespace Diplomapp.ViewModels
             await Shell.Current.GoToAsync(nameof(DetailTaskPage)+$"?Name={problem.Name}" +
                 $"&Id={Id}&ProblemId={problem.Id}&ProblemDescription={problem.Description}&" +
                 $"ProblemCreationtime={problem.Creationtime}" +
-                $"&ProblemDeadline={problem.Deadline}");
+                $"&ProblemDeadline={problem.Deadline}" + $"&ProjectName={Name}");
         }
 
     }

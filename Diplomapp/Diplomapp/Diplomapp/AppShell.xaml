@@ -3,14 +3,19 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:Diplomapp.Views"
        Title="Diplomapp"
-       x:Class="Diplomapp.AppShell">
-
+       x:Class="Diplomapp.AppShell"
+       xmlns:viewmodel="clr-namespace:Diplomapp.ViewModels"
+       >
+       
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
-    --> 
-    
+    -->
+    <Shell.BindingContext>
+        <viewmodel:AppShellvm>
+        </viewmodel:AppShellvm>
+    </Shell.BindingContext>
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -78,7 +83,15 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    
+    <Shell.FlyoutHeader>
+        <StackLayout Orientation="Horizontal">
+            <Frame CornerRadius="40">
+                <Image Source="Diplomapp.user_icon.png"></Image>
+            </Frame>
+            <Label Text="{Binding Username}">
+            </Label>
+        </StackLayout>
+    </Shell.FlyoutHeader>
     <ShellItem Route="LoginPage" FlyoutItemIsVisible="False"  >
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
     </ShellItem>

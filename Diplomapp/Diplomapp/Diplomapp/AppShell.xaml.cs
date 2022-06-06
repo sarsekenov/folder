@@ -37,7 +37,7 @@ namespace Diplomapp
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
-            var request = new HttpRequestMessage(HttpMethod.Post,App.localUrl+"api/Account/Logout");
+            var request = new HttpRequestMessage(HttpMethod.Post,App.localUrl + "api/Account/Logout");
 
             var res = await client.SendAsync(request);
             if (res.StatusCode == HttpStatusCode.OK) 
