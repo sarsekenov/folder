@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Diplomapp.Views.CreateUinfo"
+             xmlns:viewmodel="clr-namespace:Diplomapp.ViewModels"
+             xmlns:xtc="http://xamarin.com/schemas/2020/toolkit"
+             >
+    <ContentPage.Behaviors>
+        <xtc:EventToCommandBehavior EventName="Appearing" Command="{Binding getinfo}" />
+    </ContentPage.Behaviors>
+    <ContentPage.BindingContext>
+        <viewmodel:UserInfo>
+        </viewmodel:UserInfo>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Type your Name" Text="{Binding Name, Mode=TwoWay}"/>
+            <Entry Placeholder="Type your PhoneNumber" Text="{Binding PhoneNumber, Mode=TwoWay}"/>
+            <Entry Placeholder="Tell us something about you" Text="{Binding AboutMe, Mode=TwoWay}"/>
+            <Button Text="Save" Command="{Binding com}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

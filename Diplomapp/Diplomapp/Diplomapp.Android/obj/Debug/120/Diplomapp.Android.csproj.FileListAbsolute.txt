@@ -3345,3 +3345,6 @@ G:\folder\Diplomapp\Diplomapp\Diplomapp.Android\obj\Debug\120\stamp\_ConvertReso
 G:\folder\Diplomapp\Diplomapp\Diplomapp.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 G:\folder\Diplomapp\Diplomapp\Diplomapp.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 G:\folder\Diplomapp\Diplomapp\Diplomapp.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+G:\folder\Diplomapp\Diplomapp\Diplomapp.Android\obj\Debug\120\android\assets\Java.Interop.pdb
+G:\folder\Diplomapp\Diplomapp\Diplomapp.Android\obj\Debug\120\android\assets\Microsoft.AspNet.SignalR.Client.dll
+G:\folder\Diplomapp\Diplomapp\Diplomapp.Android\obj\Debug\120\android\assets\Microsoft.AspNet.SignalR.Client.pdb

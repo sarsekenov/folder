@@ -8,6 +8,7 @@ public class MonoPackageManager_Resources {
 		"Microcharts.dll",
 		"Microcharts.Droid.dll",
 		"Microcharts.Forms.dll",
+		"Microsoft.AspNet.SignalR.Client.dll",
 		"MvvmHelpers.dll",
 		"Newtonsoft.Json.dll",
 		"SkiaSharp.dll",
