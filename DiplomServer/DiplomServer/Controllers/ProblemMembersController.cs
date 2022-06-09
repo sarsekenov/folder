@@ -25,6 +25,11 @@ namespace DiplomServer.Controllers
             string user = User.Identity.GetUserId();
             return db.ProblemMembers.Where(c=>c.UserId==user);
         }
+        [Route("GetProblemMemberbyid")]
+        public IQueryable<ProblemMember> GetProblemMembers(int id)
+        {
+            return db.ProblemMembers.Where(c =>c.ProblemId == id);
+        }
 
         // GET: api/ProblemMembers/5
         [ResponseType(typeof(ProblemMember))]

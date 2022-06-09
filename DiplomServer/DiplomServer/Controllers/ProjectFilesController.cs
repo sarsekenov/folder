@@ -39,7 +39,6 @@ namespace DiplomServer.Controllers
                 var bites = File.ReadAllBytes(path);
                 return bites;
             }
-
             else
             {
                 var ret = "Error".ToCharArray();
@@ -48,7 +47,6 @@ namespace DiplomServer.Controllers
                 foreach (var bite in ret)
                 {
                     retbytes[n++] = (byte)bite;
-
                 }
                 return retbytes;
             }

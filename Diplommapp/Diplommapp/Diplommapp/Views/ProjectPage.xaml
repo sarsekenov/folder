@@ -6,6 +6,8 @@
              x:Class="Diplomapp.Views.ProjectPage"
             xmlns:xtc ="http://xamarin.com/schemas/2020/toolkit"
             xmlns:ess="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
+            xmlns:n="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+            x:Name="projectpage"
             >
     <TabbedPage.BindingContext>
         <viewmodel:ProjectPageViewModel/>
@@ -22,28 +24,45 @@
             </ResourceDictionary>
         </ContentPage.Resources>
         <ContentPage.Content>
-            <StackLayout Margin="10">
-                <Label Text="{Binding Name}"/>
-                <Entry Text="{Binding Description}" />
+            <StackLayout Margin="10,20,0,0">
+                
+                <Label Text="{Binding Name}" FontSize="Header"/>
+                <Entry Text="{Binding Description}" FontSize="Caption" HeightRequest="40" />
                 <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Цель проекта:" FontSize="Subtitle"/>
+                        <Label Text="{Binding ProjectInfo.ProjectAims}" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Бюджет проекта:" FontSize="Subtitle"/>
+                        <Label Text="{Binding ProjectInfo.ProjectsBudjet }" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Заказчик проекта:" FontSize="Subtitle"/>
+                        <Label Text="{Binding ProjectInfo.Zakazchik}" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
 
-                    <Label Text="{Binding ProjectInfo.ProjectAims}"/>
-                    <Label Text="{Binding ProjectInfo.ProjectsBudjet }"/>
-                    <Label Text="{Binding ProjectInfo.Zakazchik}"/>
-                    <Label Text=" StartDate"/>
-                    <Label Text="{Binding ProjectInfo.StartTime}"/>
-                    <Label Text=" EndDate"/>
-                    <Label Text="{Binding ProjectInfo.EndTime}"/>
+                        <Label Text=" StartDate:" FontSize="Subtitle"/>
+                        <Label Text="{Binding ProjectInfo.StartTime}" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text=" EndDate:" FontSize="Subtitle"/>
+                        <Label Text="{Binding ProjectInfo.EndTime}" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
                 </StackLayout>
-                <Button Text="Добавить файл в проект" Command="{Binding Pick}"/>
-                <ListView  ItemsSource="{Binding ProjectFiles}">
+                <Button Text="Добавить файл в проект" Command="{Binding Pick}" Margin="10,0,10,0"/>
+                <Label Text="Файлы проекта" Margin="10,0,0,0" FontSize="Title"/>
+                <ListView  ItemsSource="{Binding ProjectFiles}" Margin="10,0,0,0">
                     <ListView.Behaviors>
                         <xtc:EventToCommandBehavior EventName="ItemSelected" Command="{Binding Selectfiletodownload}"  EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"/>
                     </ListView.Behaviors>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <Frame CornerRadius="20" BorderColor="DarkGray">
                                 <Label Text="{Binding Name}" />
+                                </Frame>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -54,7 +73,7 @@
     <ContentPage Title="Команда" >
         <ContentPage.Behaviors>
             <xtc:EventToCommandBehavior
-                EventName="Appearing" Command="{Binding getempl}"
+                EventName="Appearing" Command="{Binding .}"
                 />
         </ContentPage.Behaviors>
         <ContentPage.Resources>
@@ -73,13 +92,13 @@
                 </ListView.Behaviors>
                 <ListView.Header>
                     <StackLayout Orientation="Horizontal">
-                        <Button HorizontalOptions="End" Text="Пригласить" Command="{Binding invite}"/>
+                        <Button HorizontalOptions="End" Text="Пригласить" Command="{Binding invite}" IsVisible="{Binding Owner}"/>
                     </StackLayout>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:ProjectMember">
                         <ViewCell>
-                            <Frame>
+                            <Frame CornerRadius="20" BorderColor="#333" Margin="0,5">
                                 <StackLayout>
                                     <Label Text="{Binding UserName}"/>
                                     <Label Text="{Binding Position}"/>
@@ -90,96 +109,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
-    </ContentPage>
-    <ContentPage Title="Финансы" >
-        <StackLayout>
-            <Label Padding="10">Траты на сотрудников</Label>
-            <ListView ItemsSource="{Binding Salaries}">
-                <ListView.Header >
-                    <Grid ColumnDefinitions="140,140,140">
-                        <Frame Grid.Column="0" BorderColor="Black" BackgroundColor="#f6f6f6">
-                            <Label Text="Сотрудник"/>
-                        </Frame>
-                        <Frame  Grid.Column="1" BorderColor="Black" BackgroundColor="#f6f6f6">
-                            <Label Text= "Ставка"/>
-                        </Frame>
-                        <Frame Grid.Column="2"  BorderColor="Black" BackgroundColor="#f6f6f6">
-                            <Label Text=" Зарплата"/>
-                        </Frame>
-                    </Grid>
-                </ListView.Header>
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Margin="0,5,0,5">
-                                <Grid ColumnDefinitions="140,140,140" >
-                                    <Frame Grid.Column="0" BorderColor="Gray">
-                                        <Label Text="{Binding UserId}"/>
-                                    </Frame>
-                                    <Frame Grid.Column="1" BorderColor="Gray">
-                                        <Label Text= "{Binding stavka}"/>
-                                    </Frame>
-                                    <Frame Grid.Column="2" BorderColor="Gray">
-                                        <Label Text="{Binding zp}"/>
-                                    </Frame>
-                                </Grid>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.Footer>
-                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" x:DataType="{x:Null}">
-                        <Picker Grid.Column="0" ItemsSource="{Binding Members}" ItemDisplayBinding="{Binding UserName}"
-                                SelectedItem="{Binding SelectedMember, Mode=TwoWay}">
-                        </Picker>
-                        <Entry Grid.Column="1" Text="{Binding Stavka}"></Entry>
-                        <Entry Grid.Column="2" Text="{Binding Zp}"/>
-                        <Button Text="Add" Grid.Column="3" Command="{Binding AddSal}"/>
-                    </Grid>
-                </ListView.Footer>
-            </ListView>
-
-            <Label Padding="10"> Траты на оборудование </Label>
-            <ListView ItemsSource="{Binding oborudovanies}" >
-                <ListView.Header>
-                    <Grid ColumnDefinitions="100,100,100,100">
-
-                        <Frame BorderColor="Gray" Grid.Column="0"><Label   Text="Оборудование"/></Frame>
-                        <Frame Grid.Column="1" BorderColor="Gray"><Label  Text= "Eденица измерения"/></Frame>
-                        <Frame Grid.Column="2" BorderColor="Gray"><Label  Text="Цена"/></Frame>
-                        <Frame Grid.Column="3" BorderColor="Gray"><Label  Text="Количество"/></Frame>
-                    </Grid>
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Grid ColumnDefinitions="100,100,100,100">
-                                    <Frame Grid.Column="0" BorderColor="Gray"><Label Text="{Binding Name}"/></Frame>
-                                    <Frame Grid.Column="1" BorderColor="Gray">
-                                        <Label Text="{Binding Measure}" />
-                                    </Frame >
-                                    <Frame Grid.Column="2" BorderColor="Gray"><Label Text="{Binding Count}" /></Frame>
-                                    <Frame Grid.Column="3" BorderColor="Gray"><Label Text="{Binding Price}" /></Frame>
-                                </Grid>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.Footer>
-                    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" x:DataType="{x:Null}">
-                        <Entry Grid.Column="0" Text="{Binding OborName,Mode=TwoWay}"/>
-                        <Entry Grid.Column="1" Text="{Binding Measure,Mode=TwoWay}"/>
-                        <Entry Grid.Column="2" Text="{Binding Count,Mode=TwoWay}"/>
-                        <Entry Grid.Column="3" Text="{Binding Price,Mode=TwoWay}"/>
-                        <Button Text="Add" Grid.Column="4" Command="{Binding Addobor}"/>
-                    </Grid>
-                </ListView.Footer>
-                
-            </ListView>
-            
         </StackLayout>
     </ContentPage>
     <ContentPage Title="Задачи">
@@ -200,31 +129,194 @@
                 </ListView.Behaviors>
                 <ListView.Header>
                     <StackLayout>
-                        <Button Text="Создать задание" Command="{Binding CreateTask}"/> 
+                        <Button Text="Создать задание" Command="{Binding CreateTask}" Margin="0,5,0,0" IsVisible="{Binding Owner}"/> 
                     </StackLayout>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Name}"/>
-                                <Label Text="{Binding Description}"/>
-                                <Label Text="{Binding Deadline}"/>
-                                <Label Text="{Binding Creationtime}"/>
-                            </StackLayout>
+                            <Frame CornerRadius="20" BorderColor="#333" Margin="0,5">
+                                <StackLayout >
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Description}"/>
+                                    <Label Text="{Binding Deadline}"/>
+                                    <Label Text="{Binding Creationtime}"/>
+                                </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title=" Чат">
-        <ContentPage.BindingContext>
-            <viewmodel:ChatViewModel>
-            </viewmodel:ChatViewModel>
-        </ContentPage.BindingContext>
+    <ContentPage Title="Финансы" IsVisible="{Binding Owner}">
+        <StackLayout >
+            <!--<StackLayout.Orientation>
+                <OnPlatform x:TypeArguments="StackOrientation">
+                    <OnPlatform.Platforms>
+                        <On Platform="UWP" Value="Horizontal"/>
+                        <On Platform="Android" Value="Vertical"/>
+                        <On Platform="IOS" Value="Vertical"/>
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </StackLayout.Orientation>-->
+            <StackLayout>
+                <Label Padding="10">Траты на сотрудников</Label>
+                <ListView ItemsSource="{Binding Salaries}" HasUnevenRows="True" SeparatorVisibility="None" VerticalOptions="StartAndExpand"
+                          HorizontalScrollBarVisibility="Always">
+                    <ListView.Header >
+                        <Grid ColumnDefinitions="150,100,100,100,100,100,100,100,100,100">
+                            <Frame Grid.Column="0" BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="Сотрудник" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame  Grid.Column="1" BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="Ставка" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="2"  BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="Зарплата" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="3"  BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="Социальный Налог" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="4"  BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="Соц страхование" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="5"  BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="налог 2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="6"  BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="налог" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="7"  BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="Итого в месяц (без налогов)" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="8"  BorderColor="Black" BackgroundColor="#fafafa">
+                                <Label Text="Итого в месяц" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <!--<Button Grid.Column="9" Command="{Binding changeSalary} " Text="Change"/>-->
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="0,3,0,3">
+                                    <Grid ColumnDefinitions="150,100,100,100,100,100,100,100,100,100" VerticalOptions="StartAndExpand" >
+                                        <Frame Grid.Column="0" BorderColor="#333">
+                                            <Entry  Text="{Binding UserId}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="1" BorderColor="#333">
+                                            <Entry  Text= "{Binding stavka}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="2" BorderColor="#333">
+                                            <Entry  Text="{Binding zp}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="3" BorderColor="#333">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeSal,Source={x:Reference projectpage}}" Text="{Binding tax1}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="4" BorderColor="#333">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeSal,Source={x:Reference projectpage}}" Text="{Binding tax2}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="5" BorderColor="#333">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeSal,Source={x:Reference projectpage}}" Text="{Binding tax3}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="6" BorderColor="#333">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeSal,Source={x:Reference projectpage}}" Text="{Binding tax4}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="8" BorderColor="#333">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeSal,Source={x:Reference projectpage}}" Text="{Binding total}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="7" BorderColor="#333">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeSal,Source={x:Reference projectpage}}" Text="{Binding saltotal}"/>
+                                        </Frame>
+                                        <Button Text="Save" Command="{Binding Path=BindingContext.putSal ,Source={x:Reference projectpage}} " CommandParameter="{Binding .}" Grid.Column="9"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Grid ColumnDefinitions="150,100,100,100" x:DataType="{x:Null}">
+                            <Picker Grid.Column="0" ItemsSource="{Binding Members}" ItemDisplayBinding="{Binding UserName}"
+                                SelectedItem="{Binding SelectedMember, Mode=TwoWay}">
+                            </Picker>
+                            <Entry Grid.Column="1" Text="{Binding Stavka}"></Entry>
+                            <Entry Grid.Column="2" Text="{Binding Zp}"/>
+                            <Button Text="Add" Grid.Column="3" Command="{Binding AddSal}" />
+                        </Grid>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+            
+            <StackLayout>
+                <Label Padding="10">Траты на оборудование</Label>
+                <ListView ItemsSource="{Binding oborudovanies}" HasUnevenRows="True" SeparatorVisibility="None" VerticalOptions="StartAndExpand">
+                    <ListView.Header>
+                        <Grid ColumnDefinitions="150,120,120,120,120">
+
+                            <Frame BorderColor="Gray" Grid.Column="0">
+                                <Label   Text="Оборудование" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="1" BorderColor="Gray">
+                                <Label  Text= "Eденица измерения" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="2" BorderColor="Gray">
+                                <Label  Text="Цена" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="3" BorderColor="Gray">
+                                <Label  Text="Количество" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <!--<Button Command="{Binding changeOborudovanie}" Grid.Column="4" Text="Change"/>-->
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="0,3">
+                                    <Grid ColumnDefinitions="150,120,120,120,120">
+                                        <Frame Grid.Column="0" BorderColor="Gray">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeObor,Source={x:Reference projectpage}}" Text="{Binding Name}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="1" BorderColor="Gray">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeObor,Source={x:Reference projectpage}}" Text="{Binding Measure}" />
+                                        </Frame >
+                                        <Frame Grid.Column="2" BorderColor="Gray">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeObor,Source={x:Reference projectpage}}" Text="{Binding Count}" />
+                                        </Frame>
+                                        <Frame Grid.Column="3" BorderColor="Gray">
+                                            <Entry IsReadOnly="{Binding Path=BindingContext.ChangeObor,Source={x:Reference projectpage}}" Text="{Binding Price}" />
+                                        </Frame>
+                                        <Button Text="Save" Command="{Binding Path=BindingContext.putObor ,Source={x:Reference projectpage}}" CommandParameter="{Binding .}" Grid.Column="4"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Grid ColumnDefinitions="150,120,120,120,120" x:DataType="{x:Null}">
+                            <Entry Grid.Column="0" Text="{Binding OborName,Mode=TwoWay}"/>
+                            <Entry Grid.Column="1" Text="{Binding Measure,Mode=TwoWay}"/>
+                            <Entry Grid.Column="2" Text="{Binding Count,Mode=TwoWay}"/>
+                            <Entry Grid.Column="3" Text="{Binding Price,Mode=TwoWay}"/>
+                            <Button Text="Add" Grid.Column="4" Command="{Binding Addobor}"/>
+                        </Grid>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title = "Статистика" IsVisible="{Binding Owner}" >
+        <ContentPage.Behaviors>
+            <xtc:EventToCommandBehavior Command="{Binding charts_in }" EventName="Appearing"/>
+        </ContentPage.Behaviors>
         <ContentPage.Content>
-            <StackLayout></StackLayout>
+            <ScrollView>
+                <StackLayout>
+                <n:ChartView Chart="{Binding donut}"  x:Name=" charter" HeightRequest="400">
+                </n:ChartView>
+                <n:ChartView Chart="{Binding point}" x:Name=" charter1" HeightRequest="400">
+                </n:ChartView>
+                </StackLayout>
+            </ScrollView>
         </ContentPage.Content>
     </ContentPage>
 </TabbedPage>

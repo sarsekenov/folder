@@ -70,15 +70,29 @@ namespace Diplomapp.ViewModels
             Getfiles = new AsyncCommand(getfilelist);
             Pick = new AsyncCommand(pickFile);
             Selectfiletodownload = new AsyncCommand<TasksFile>(selectedfiletodownload);
+            
         }
-
+        
 
         public AsyncCommand addCheck { get; set; }
         async Task AddCheck()
         {
-            Checklists.Add(new ProblemChecklist() { IsChecked = false, ProblemId = ProblemId, ProblemName= Title});
-            await sendChecklist();
-            Title = string.Empty;
+            using (App.client = new HttpClient())
+            {
+                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
+                var check = new ProblemChecklist() { IsChecked = false, ProblemId = ProblemId, ProblemName = Title };
+                var json = JsonConvert.SerializeObject(check);
+                var con = new StringContent(json);
+                con.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                var res = await App.client.PostAsync(App.localUrl + "api/ProblemChecklists", con);
+                if (res.IsSuccessStatusCode) 
+                {
+                    var result = await res.Content.ReadAsStringAsync();
+                    var json2 = JsonConvert.DeserializeObject<ProblemChecklist>(result);
+                    Checklists.Add(json2);                 
+                }
+            }
+                Title = string.Empty;
         }
         public static AsyncCommand<ProblemChecklist> Selectedcheck { get; set; }
         async Task CheckChecklist(ProblemChecklist checklist) 
@@ -107,6 +121,8 @@ namespace Diplomapp.ViewModels
         public AsyncCommand Initial { get; set; }
         public async Task init()
         {
+            
+            await GetMember.ExecuteAsync();
             await Getfiles.ExecuteAsync();
             await GetChecklist.ExecuteAsync();
             await GetComments.ExecuteAsync();
@@ -168,30 +184,33 @@ namespace Diplomapp.ViewModels
         public ProjectMember TasksUserName { get=>tasksusername; set=>SetProperty(ref tasksusername,value); }
         public async Task getMember()
         {
-            using (App.client = new HttpClient()) 
+            using (App.client = new HttpClient())
             {
                 App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.accessToken);
-                var json = await App.client.GetAsync(App.localUrl + $"api/ProlemMembers?id={ProblemId}");
-                if (json.IsSuccessStatusCode) 
+                var res = await App.client.GetAsync(App.localUrl + $"GetProblemMemberbyid?id={ProblemId}");
+                if (res.IsSuccessStatusCode)
                 {
-                    var result = await json.Content.ReadAsStringAsync();
-                    var res = JsonConvert.DeserializeObject<ProblemMember>(result);
-
-                    foreach (var member in Members) 
+                    var json = await res.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<List<ProblemMember>>(json);
+                    if (result.Count > 0)
                     {
-                        if (res.UserId == member.UserID)
+                        foreach (var m in Members)
                         {
-                            TasksUserName = member;
+                            if (m.UserID == result[result.Count - 1].UserId)
+                            {
+                                TasksUserName = m;
+                            }
                         }
-                    } 
+
+                    }
                 }
-                
-                
             }
+           
         }
         public AsyncCommand command1 { get; set; }
         public AsyncCommand GetMember { get; set; }
-        public ProjectMember SelectedMember { get; set; }
+        ProjectMember Member;
+        public ProjectMember SelectedMember { get => Member; set => SetProperty(ref Member, value); }
         
         public ObservableRangeCollection<TasksFile> TaskFiles { get; set; }
         public AsyncCommand Getfiles { get; set; }
@@ -240,7 +259,7 @@ namespace Diplomapp.ViewModels
 
                 var dson = await req.Content.ReadAsStringAsync();
                 var res2 = JsonConvert.DeserializeObject<ProblemComment>(dson);
-                Comment = string.Empty;               
+                Comment = string.Empty;         
                 if (req.IsSuccessStatusCode)
                 {
                     Comments.Add(res2);
@@ -363,9 +382,8 @@ namespace Diplomapp.ViewModels
                 if (res.IsSuccessStatusCode)
                 {
                     var bfile = await res.Content.ReadAsByteArrayAsync();
-                    string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                     string localFilename = file.Name;
-
                     File.WriteAllBytes(documentsPath + "/" + localFilename, bfile);
                 }
             }

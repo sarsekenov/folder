@@ -2,39 +2,6 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.16299": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -263,27 +230,6 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        }
-      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -373,203 +319,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/win-arm64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-x64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm64/nativeassets/uap10.0/libEGL.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-arm64/nativeassets/uap10.0/libGLESv2.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-arm64/nativeassets/uap10.0/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {
-            "assetType": "runtime",
-            "rid": "aot"
-          }
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll": {
-            "assetType": "runtime",
-            "rid": "aot"
-          }
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -591,20 +340,6 @@
             "assetType": "native",
             "rid": "win10-x86"
           }
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -641,16 +376,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -660,39 +386,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -920,27 +613,6 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
@@ -1210,115 +882,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {},
-          "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {},
-          "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -1329,20 +892,6 @@
         },
         "native": {
           "runtimes/win10-arm/native/Microsoft.Graphics.Canvas.dll": {}
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -1379,16 +928,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -1398,39 +938,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm-aot": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -1658,27 +1165,6 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
         }
       },
       "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
@@ -1949,115 +1435,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {},
-          "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {},
-          "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -2068,20 +1445,6 @@
         },
         "native": {
           "runtimes/win10-arm/native/Microsoft.Graphics.Canvas.dll": {}
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -2118,16 +1481,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -2137,39 +1491,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm64-aot": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -2397,27 +1718,6 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
@@ -2688,115 +1988,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm64/nativeassets/uap10.0/libEGL.dll": {},
-          "runtimes/win10-arm64/nativeassets/uap10.0/libGLESv2.dll": {},
-          "runtimes/win10-arm64/nativeassets/uap10.0/libSkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -2804,20 +1995,6 @@
         },
         "runtime": {
           "lib/uap10.0/Microsoft.Graphics.Canvas.winmd": {}
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -2854,16 +2031,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -2873,39 +2041,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -3133,27 +2268,6 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
@@ -3423,115 +2537,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {},
-          "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {},
-          "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -3542,20 +2547,6 @@
         },
         "native": {
           "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -3592,16 +2583,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -3611,39 +2593,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64-aot": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -3871,27 +2820,6 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
@@ -4162,115 +3090,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {},
-          "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {},
-          "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -4281,20 +3100,6 @@
         },
         "native": {
           "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -4331,16 +3136,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -4350,39 +3146,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -4610,27 +3373,6 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
@@ -4900,115 +3642,6 @@
           "runtimes/win10-x86/nativeassets/uap10.0.15138/clrcompression.dll": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {},
-          "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {},
-          "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x86/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -5019,20 +3652,6 @@
         },
         "native": {
           "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -5069,16 +3688,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -5088,39 +3698,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86-aot": {
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microcharts.Uwp.dll": {},
-          "lib/uap10.0/Microcharts.dll": {}
-        }
-      },
-      "Microcharts.Forms/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views.Forms": "2.80.2",
-          "System.ValueTuple": "4.5.0",
-          "Xamarin.Forms": "4.7.0.1351"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.Forms.dll": {},
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
         "type": "package",
         "dependencies": {
@@ -5348,27 +3925,6 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Refractored.MvvmHelpers/1.6.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MvvmHelpers.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
@@ -5639,115 +4195,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "SkiaSharp/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/SkiaSharp.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {},
-          "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {},
-          "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Views/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2"
-        },
-        "compile": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x86/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/2.80.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2",
-          "Xamarin.Forms": "4.6.0.772"
-        },
-        "compile": {
-          "ref/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
-        }
-      },
-      "System.Reflection.Emit.ILGeneration/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.ILGeneration.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0.16299/_._": {}
-        },
-        "runtime": {
-          "lib/uap10.0.16299/_._": {}
-        }
-      },
       "Win2D.uwp/1.20.0": {
         "type": "package",
         "compile": {
@@ -5758,20 +4205,6 @@
         },
         "native": {
           "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
-        }
-      },
-      "Xamarin.CommunityToolkit/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2291"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -5808,16 +4241,7 @@
       },
       "Diplommapp/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microcharts": "0.9.5.9",
-          "Microcharts.Forms": "0.9.5.9",
-          "Newtonsoft.Json": "13.0.1",
-          "Refractored.MvvmHelpers": "1.6.2",
-          "Xamarin.CommunityToolkit": "2.0.2",
-          "Xamarin.Essentials": "1.7.3",
-          "Xamarin.Forms": "5.0.0.2401"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Diplommapp.dll": {}
         },
@@ -5828,41 +4252,8 @@
     }
   },
   "libraries": {
-    "Microcharts/0.9.5.9": {
-      "sha512": "oiaPjsC+l211tRXw17bxT7D1uPHLZG4wZq7w9h9w7LFX76s4ppLN9UGVkUQJ2vBammdFH0JXtbvEUVtbOq85UQ==",
-      "type": "package",
-      "path": "microcharts/0.9.5.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Microcharts.Droid.dll",
-        "lib/MonoAndroid10/Microcharts.dll",
-        "lib/netstandard2.0/Microcharts.dll",
-        "lib/uap10.0/Microcharts.Uwp.dll",
-        "lib/uap10.0/Microcharts.dll",
-        "lib/xamarinios1.0/Microcharts.dll",
-        "lib/xamarinios1.0/Microcharts.iOS.dll",
-        "lib/xamarinmac2.0/Microcharts.dll",
-        "lib/xamarinmac2.0/Microcharts.macOS.dll",
-        "microcharts.0.9.5.9.nupkg.sha512",
-        "microcharts.nuspec"
-      ]
-    },
-    "Microcharts.Forms/0.9.5.9": {
-      "sha512": "qWph+JII7fWqx/ObgqT0IQ9ICGTHSUfvXT1l+Yf/LlLK4DAhDdvn0AKKUatz2uvHy1xHmzBFS+nzdreOpBA2Vw==",
-      "type": "package",
-      "path": "microcharts.forms/0.9.5.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microcharts.Forms.dll",
-        "lib/netstandard2.0/Microcharts.dll",
-        "microcharts.forms.0.9.5.9.nupkg.sha512",
-        "microcharts.forms.nuspec"
-      ]
-    },
     "Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
-      "sha512": "zhPr5WeW8JQnt83lC0EM2kpp6zsKQQV9zQO48mh+f6aaK/eT8Zj/K7kmJ60KgP+WgWTfVGmrSp2TARd70jd62g==",
+      "sha512": "RvrUhS53oMQfDRhz8CnV+d2RXnvyc7mqBJtcXpWhIHI36jEZwepOke4wLfbOQQzpyVauFWGu+jkQSzYNxpHJQA==",
       "type": "package",
       "path": "microsoft.net.native.compiler/2.2.10-rel-29722-00",
       "hasTools": true,
@@ -5916,7 +4307,7 @@
       ]
     },
     "Microsoft.Net.UWPCoreRuntimeSdk/2.2.12": {
-      "sha512": "IRpFXnKUrate/hZmDPhZv3ECd+q2Q/iD+NQ9oEd0JVQfvypxclAjeZr1mMggxF9eN6KWl9zBXIydxqD2yrt6vw==",
+      "sha512": "fIR9mPkUDSAkLhZrywzHtCCmzNdoiAMh5RPKfUTmMHKii+nT6q4fs545vlW39RgVtZ4XoyMPCAJTx5gIYX3p6A==",
       "type": "package",
       "path": "microsoft.net.uwpcoreruntimesdk/2.2.12",
       "hasTools": true,
@@ -5952,7 +4343,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "df3mwtb9FHbMNE9ddOqNQVdK5S2CQc/i+jWsYfiJxBkq0V+uVmRw/VicTeHRf+cQgEcSynnkOg7xgqQJSifb7w==",
+      "sha512": "4ooTwE4vT0HwyH361HZY0CUCImMqh/O8O3ANl6UwTm51YU8icNnG0zFBdZYdzT7/3f0kASzouUKY0Tnu3XnOaQ==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -6402,56 +4793,8 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
-      "type": "package",
-      "path": "newtonsoft.json/13.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "packageIcon.png"
-      ]
-    },
-    "Refractored.MvvmHelpers/1.6.2": {
-      "sha512": "pXiyT0ad3QI7IzZSSjVNliyhyyAe7lmNPdfAEgSrtjhF9twrYoKbBlTd58IJc67Fw8QmHEur8F9eBA4rj+BZAg==",
-      "type": "package",
-      "path": "refractored.mvvmhelpers/1.6.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/net461/MvvmHelpers.dll",
-        "lib/net461/MvvmHelpers.pdb",
-        "lib/net461/MvvmHelpers.xml",
-        "lib/netstandard1.0/MvvmHelpers.dll",
-        "lib/netstandard1.0/MvvmHelpers.pdb",
-        "lib/netstandard1.0/MvvmHelpers.xml",
-        "lib/netstandard2.0/MvvmHelpers.dll",
-        "lib/netstandard2.0/MvvmHelpers.pdb",
-        "lib/netstandard2.0/MvvmHelpers.xml",
-        "refractored.mvvmhelpers.1.6.2.nupkg.sha512",
-        "refractored.mvvmhelpers.nuspec"
-      ]
-    },
     "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "UkDORhMlESh/tiDICv3shSM+rFQxjCbWKlM9K+ld08hNPVOYBqqHo/e8kkXZTXXNrre4L2ChYnKCAYuoWd/sLg==",
+      "sha512": "Xit8LW8SmJbyrRUTYsl3Mj49CgzD56XoI1g/8XrCeXEC5oWtvfHocFsJxbxmz37xp1Ii+6nMsU0y1nUI8LxwdA==",
       "type": "package",
       "path": "runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -6634,7 +4977,7 @@
       ]
     },
     "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
-      "sha512": "MRdlU6RC5zHeX+fqqotY8tvr6uCDJztpvj8eJ+b0S8nmmGJmYs2qO/j4vzodmlHF374rUt78b8tT6vb9ehxmcQ==",
+      "sha512": "U5fdIaJB17ioGmdEJXJPJ7enneGMD3AY6jUKxcP1/t33dBe0DKGzRkxbWJ+poNZJB5rYBXcZ53BADpzEbwopVg==",
       "type": "package",
       "path": "runtime.win10-arm.microsoft.net.native.compiler/2.2.10-rel-29722-00",
       "hasTools": true,
@@ -6933,7 +5276,7 @@
       ]
     },
     "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.8-rel-29722-00": {
-      "sha512": "v55o4C2ps+Cp32oWn5ugVq0Ztc72ykpFCsCc/oO6Y5UwDkZ9txmgPjas9LUVJzFduhw1Cj0XehTaLyVHoETC+w==",
+      "sha512": "WDprEut4oOal4/tufMRvoJ+m0RQgEAys6lrutdbRCduENC2DrE9Dx/tjYLtDOL6ATO6+QDubTYywRlTD5zaHeQ==",
       "type": "package",
       "path": "runtime.win10-arm.microsoft.net.native.sharedlibrary/2.2.8-rel-29722-00",
       "hasTools": true,
@@ -7313,7 +5656,7 @@
       ]
     },
     "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.12": {
-      "sha512": "YX12L3el/LKr/+51sCsWivbdk1r5Zl1Fta8pQOyxAawbfTDdPATeGv4deBkB6DpEK1yu/ADa6X0ujopz6lzWmw==",
+      "sha512": "p7SkJXOE3YLc5XY6DeHEskofpFo3D2JGWUERbTkOGulJZFqwOjuP6BA1kK21OF5rBbTJCeBE6akAQ19X02ULuA==",
       "type": "package",
       "path": "runtime.win10-arm.microsoft.net.uwpcoreruntimesdk/2.2.12",
       "hasTools": true,
@@ -7334,7 +5677,7 @@
       ]
     },
     "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "3hGJ7Zxl7EKFME2bHR2EQKaZpFDL5pV0O5tq6PLamsuLOE3FoESCOQKXwB968mrxfrqoGofaMTb0AtLhB1krhQ==",
+      "sha512": "imUC5+qrkRP0r7k8HUveUABxMjooh+mybyUEkIZwviHpj4zjfwNuQZvxqaXlCZxrb4gtU39XjvIq7bN9OMmz4A==",
       "type": "package",
       "path": "runtime.win10-arm.microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -7516,7 +5859,7 @@
       ]
     },
     "runtime.win10-arm64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "bo3TcaIGExe95KO4wiTm4+RfYyezzXY7IOZ6V4d33rAixJT7PN4zxN9STcaGSYVQeeAznZ2Q3L7mqF63kWPrJQ==",
+      "sha512": "K7aqAJWVl//l9py7p96/8AZP6Nn+SsZxXMd9SM1eoXSSReUoVKNjKAZOJaJRfLMOTbCK3utkd4AJBJspWSdVNw==",
       "type": "package",
       "path": "runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -7699,7 +6042,7 @@
       ]
     },
     "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
-      "sha512": "ZF/ualE2u58JjIGT0MUA4glqFzx8fQCRksm+LnCzQSUzlr6VlH//zBqRJMB77K8WLxSPDB4lIV5K0tvTtBnqoA==",
+      "sha512": "3aGd2n8yz9EodSbl7quvo6HjNRAZMerYoHrBuX1xPsNzzFfnm/gHd0f8THNCXp0R7ix37t6WTP2uty+jqMBUHg==",
       "type": "package",
       "path": "runtime.win10-arm64.microsoft.net.native.compiler/2.2.10-rel-29722-00",
       "hasTools": true,
@@ -7877,7 +6220,7 @@
       ]
     },
     "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.8-rel-29722-00": {
-      "sha512": "IfrQPttlUx2fQTRsYNeF8ZpQAYmQOfcwSwTPvEXhMDVSRo2tjvi10jOiF4RxNX6Y+2plp/kkgJ/GgME8t1Jtvw==",
+      "sha512": "l75u2oTidczIVvHyDvqJHFmhhRu2hIUlMEen3guMKL/cQYSgpqdsHfAvM6z/ohKM9aBd8NMBs9Xtb4U0qGrj+A==",
       "type": "package",
       "path": "runtime.win10-arm64.microsoft.net.native.sharedlibrary/2.2.8-rel-29722-00",
       "hasTools": true,
@@ -8259,7 +6602,7 @@
       ]
     },
     "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "XntXWWqiIyBUCDBAF82Qu8ngsZQdUEgIErTFaaGeIHDH5HWMt8nJ9n9rwEmUFG1PWNf/5nEmm4o5bCrKomIVbA==",
+      "sha512": "9oD8rtohqy7HMjb4aSB9z7kQXsO7DtvWZsBiJt6RmvIbxP1j9i8gpCrVoBE7N9UCEKAouTN+wkiNqK2VIs6NbQ==",
       "type": "package",
       "path": "runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -8442,7 +6785,7 @@
       ]
     },
     "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
-      "sha512": "arU9AO6QIrVSRBV83+6jgbNXWe/oTGGeVtHZzb86TPezeEVOWDp+40m4YrBp/L90G0yDrUlt1ekZuwYFUawc8Q==",
+      "sha512": "euNK2KsXc1UcvvKAHOlv1A0A7YXcs2lfDq6258iTBDEO7Eusc1NlU+0uXjG1zVJfIsOxV42+V3T9QDfyLCF7fw==",
       "type": "package",
       "path": "runtime.win10-x64.microsoft.net.native.compiler/2.2.10-rel-29722-00",
       "hasTools": true,
@@ -8735,7 +7078,7 @@
       ]
     },
     "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.8-rel-29722-00": {
-      "sha512": "tyHCWyzJccI/NsSYmQTq6HUPi4MVhbYMLD3JV58nGBrLzyJhva9JrZxQdwEmaMuI7j6l1fdcgsPlf/jRknZerw==",
+      "sha512": "4Yqmfetqpt+8X6cntqBp+XsCRvrkQHdHAI2iOB9PAYg60BFnyaO0rqfVdvR+P+g+YDncPXAfQCmkJNlnt2eXZA==",
       "type": "package",
       "path": "runtime.win10-x64.microsoft.net.native.sharedlibrary/2.2.8-rel-29722-00",
       "hasTools": true,
@@ -9115,7 +7458,7 @@
       ]
     },
     "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.12": {
-      "sha512": "hlbwt6KW5A+pCgDiBYt5BrTfSDZgsVuKeq4uMARX5j95otN2mrbyRT9WtV82tiW6sh4YCXvjiFVb9O57x0HrDg==",
+      "sha512": "qEKyLwxrvtVSk/oMsjDxnEThF66+Vf48F5Fam7IxXnbQQQmql6GlwTzl3fP/M2gTRqKle1tYa9HukHqAPVwDlw==",
       "type": "package",
       "path": "runtime.win10-x64.microsoft.net.uwpcoreruntimesdk/2.2.12",
       "hasTools": true,
@@ -9136,7 +7479,7 @@
       ]
     },
     "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "WkP2v+UV+S9Eaxw/IIwZSafjeX1/U2AJaBr3X+xpcBYu2s8136Z25LCHRQS4lSNFrXbOzV3xefHiIFFD53Jt4Q==",
+      "sha512": "xmJ0GlQ7iFZ0O1XDIQLr//bkhuwMyRPZyYgP1ocvzP32VzY9V8z3AjbP3vmZWHDwFnNhbxPzAJer4ZyQfDUzVA==",
       "type": "package",
       "path": "runtime.win10-x64.microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -9318,7 +7661,7 @@
       ]
     },
     "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "saACFuL1P/Iu4cLvMcTM1zDB/M80zvsjlH6xUngz6LNrJL5ogEEHYJez8c3q3ccLECQgRaesX3oVfbiyPCL0Aw==",
+      "sha512": "utTFw5HOBlhS22e3L/0OhTVmaVjHwPu+KvrusKgmnBu5+LiklrAFdNW+2CBUKDg3QMj+lURs0SR5yRwWptvt9A==",
       "type": "package",
       "path": "runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -9501,7 +7844,7 @@
       ]
     },
     "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.10-rel-29722-00": {
-      "sha512": "/FwdIs704RTEkxdXEJ/UDPk0MGo951TPhxAAiQVeGPn13crroZr+LHjRvbhfHnv6Sl1aHglhLB+5FxClsHOTCw==",
+      "sha512": "9MYuqrIpSxWo5okkTrg3cZvhM7KnrxgtRlrYNiYcRs1TXfSRTjSo670/rffW0SeQPIf3l+MxPAQXFribvFODTA==",
       "type": "package",
       "path": "runtime.win10-x86.microsoft.net.native.compiler/2.2.10-rel-29722-00",
       "hasTools": true,
@@ -9794,7 +8137,7 @@
       ]
     },
     "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.8-rel-29722-00": {
-      "sha512": "6GJiLd77ikW+coegj6QsHslJ3RtvsM0BlVw78EPNdvS9B2UKZHocShI2UvboV/vrg0A+2/v66KtY1xVEIRa+qQ==",
+      "sha512": "nyERLcNkeCzseMd9JwYTOzYbrNhPlY+LM4o3SJ9DZdVQXMFvDB/2HYCdamw99+2XaldbcWkkiCt/12llkj7eGw==",
       "type": "package",
       "path": "runtime.win10-x86.microsoft.net.native.sharedlibrary/2.2.8-rel-29722-00",
       "hasTools": true,
@@ -10174,7 +8517,7 @@
       ]
     },
     "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.12": {
-      "sha512": "saSRotvYwwuShD6MGVrv5v3lKdlvimzxUHi8yTnXapgPCFwu5j+sIFhC+yy02ZK8zkBSUIFjEtFeXb/PpltqIg==",
+      "sha512": "KguZgmTZNVn+pvATa2eVKrCocUXJ2su03NOLXp90l2iN9ZADyEKEtpHKlWrH9UHVypHZ6JbsDmVlNk0CNLyWfw==",
       "type": "package",
       "path": "runtime.win10-x86.microsoft.net.uwpcoreruntimesdk/2.2.12",
       "hasTools": true,
@@ -10195,7 +8538,7 @@
       ]
     },
     "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform/6.2.12": {
-      "sha512": "xKqRlmPFq8Ym+cREqMcNs2488Qdu+5prYkKPl8yk3I9hEgDfrGw0ykErR5U3Ppnt7k9A7a89WAE0f0WypR1JbQ==",
+      "sha512": "C086n7cyFL4EB7QBAsg6bb7rmhaowunYzfFSggG2zL4VgQ+DGrMqnJZ7HBJjJclWIs98S2y5gCLZ9dfy+T19Hg==",
       "type": "package",
       "path": "runtime.win10-x86.microsoft.netcore.universalwindowsplatform/6.2.12",
       "files": [
@@ -10376,407 +8719,6 @@
         "runtimes/win10-x86/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
     },
-    "SkiaSharp/2.80.2": {
-      "sha512": "D25rzdCwh+3L+XyXqpNa+H/yiLJbE3/R3K/XexwHyQjGdzZvSufFW3oqf3En7hhqSIsxsJ8f5NEZ0J5W5wlGBg==",
-      "type": "package",
-      "path": "skiasharp/2.80.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/monoandroid1.0/SkiaSharp.targets",
-        "build/monoandroid1.0/arm/libSkiaSharp.so",
-        "build/monoandroid1.0/arm64/libSkiaSharp.so",
-        "build/monoandroid1.0/x64/libSkiaSharp.so",
-        "build/monoandroid1.0/x86/libSkiaSharp.so",
-        "build/net462/SkiaSharp.targets",
-        "build/tizen40/SkiaSharp.targets",
-        "build/tizen40/arm/libSkiaSharp.so",
-        "build/tizen40/x86/libSkiaSharp.so",
-        "build/xamarinios1.0/SkiaSharp.targets",
-        "build/xamarinios1.0/libSkiaSharp.framework/Info.plist",
-        "build/xamarinios1.0/libSkiaSharp.framework/Modules/module.modulemap",
-        "build/xamarinios1.0/libSkiaSharp.framework/_CodeSignature/CodeResources",
-        "build/xamarinios1.0/libSkiaSharp.framework/libSkiaSharp",
-        "build/xamarinmac2.0/SkiaSharp.targets",
-        "build/xamarintvos1.0/SkiaSharp.targets",
-        "build/xamarintvos1.0/libSkiaSharp.framework/Info.plist",
-        "build/xamarintvos1.0/libSkiaSharp.framework/Modules/module.modulemap",
-        "build/xamarintvos1.0/libSkiaSharp.framework/_CodeSignature/CodeResources",
-        "build/xamarintvos1.0/libSkiaSharp.framework/libSkiaSharp",
-        "build/xamarinwatchos1.0/SkiaSharp.targets",
-        "build/xamarinwatchos1.0/libSkiaSharp.framework/Info.plist",
-        "build/xamarinwatchos1.0/libSkiaSharp.framework/Modules/module.modulemap",
-        "build/xamarinwatchos1.0/libSkiaSharp.framework/_CodeSignature/CodeResources",
-        "build/xamarinwatchos1.0/libSkiaSharp.framework/libSkiaSharp",
-        "buildTransitive/monoandroid1.0/SkiaSharp.targets",
-        "buildTransitive/net462/SkiaSharp.targets",
-        "buildTransitive/tizen40/SkiaSharp.targets",
-        "buildTransitive/xamarinios1.0/SkiaSharp.targets",
-        "buildTransitive/xamarinmac2.0/SkiaSharp.targets",
-        "buildTransitive/xamarintvos1.0/SkiaSharp.targets",
-        "buildTransitive/xamarinwatchos1.0/SkiaSharp.targets",
-        "lib/monoandroid1.0/SkiaSharp.dll",
-        "lib/monoandroid1.0/SkiaSharp.xml",
-        "lib/net462/SkiaSharp.dll",
-        "lib/net462/SkiaSharp.xml",
-        "lib/netstandard1.3/SkiaSharp.dll",
-        "lib/netstandard1.3/SkiaSharp.xml",
-        "lib/netstandard2.0/SkiaSharp.dll",
-        "lib/netstandard2.0/SkiaSharp.xml",
-        "lib/tizen40/SkiaSharp.dll",
-        "lib/tizen40/SkiaSharp.xml",
-        "lib/uap10.0.10240/SkiaSharp.dll",
-        "lib/uap10.0.10240/SkiaSharp.xml",
-        "lib/uap10.0.16299/SkiaSharp.dll",
-        "lib/uap10.0.16299/SkiaSharp.xml",
-        "lib/xamarinios1.0/SkiaSharp.dll",
-        "lib/xamarinios1.0/SkiaSharp.xml",
-        "lib/xamarinmac2.0/SkiaSharp.dll",
-        "lib/xamarinmac2.0/SkiaSharp.xml",
-        "lib/xamarintvos1.0/SkiaSharp.dll",
-        "lib/xamarintvos1.0/SkiaSharp.xml",
-        "lib/xamarinwatchos1.0/SkiaSharp.dll",
-        "lib/xamarinwatchos1.0/SkiaSharp.xml",
-        "runtimes/osx/native/libSkiaSharp.dylib",
-        "runtimes/win-arm64/native/libSkiaSharp.dll",
-        "runtimes/win-x64/native/libSkiaSharp.dll",
-        "runtimes/win-x86/native/libSkiaSharp.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win10-arm64/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-arm64/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-arm64/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
-        "skiasharp.2.80.2.nupkg.sha512",
-        "skiasharp.nuspec"
-      ]
-    },
-    "SkiaSharp.Views/2.80.2": {
-      "sha512": "qOvmMOZ2lkT6BTbmSNjsA46ugUeo6X6Vonok5RE3rYWpCEFxB1FvBqbKoaLY5XpdLWzyS3qinAuT2JLSyoPRvg==",
-      "type": "package",
-      "path": "skiasharp.views/2.80.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "lib/monoandroid1.0/SkiaSharp.Views.Android.dll",
-        "lib/monoandroid1.0/SkiaSharp.Views.Android.xml",
-        "lib/net462/SkiaSharp.Views.Desktop.dll",
-        "lib/net462/SkiaSharp.Views.Desktop.xml",
-        "lib/tizen40/SkiaSharp.Views.Tizen.dll",
-        "lib/tizen40/SkiaSharp.Views.Tizen.xml",
-        "lib/uap10.0/SkiaSharp.Views.UWP.dll",
-        "lib/uap10.0/SkiaSharp.Views.UWP.xml",
-        "lib/xamarinios1.0/SkiaSharp.Views.iOS.dll",
-        "lib/xamarinios1.0/SkiaSharp.Views.iOS.xml",
-        "lib/xamarinmac2.0/SkiaSharp.Views.Mac.dll",
-        "lib/xamarinmac2.0/SkiaSharp.Views.Mac.xml",
-        "lib/xamarintvos1.0/SkiaSharp.Views.tvOS.dll",
-        "lib/xamarintvos1.0/SkiaSharp.Views.tvOS.xml",
-        "lib/xamarinwatchos1.0/SkiaSharp.Views.watchOS.dll",
-        "lib/xamarinwatchos1.0/SkiaSharp.Views.watchOS.xml",
-        "runtimes/win10-arm/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "runtimes/win10-arm64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "skiasharp.views.2.80.2.nupkg.sha512",
-        "skiasharp.views.nuspec"
-      ]
-    },
-    "SkiaSharp.Views.Forms/2.80.2": {
-      "sha512": "8aRDb98O2cHymB94O8FBj85qMC+MYEY6591wBpHcwgfz4HMo4orSMApD5y8VDmHpA5KR0Yh2ija+HTylz/9CgA==",
-      "type": "package",
-      "path": "skiasharp.views.forms/2.80.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "build/net462/SkiaSharp.Views.Forms.targets",
-        "lib/monoandroid1.0/SkiaSharp.Views.Forms.dll",
-        "lib/monoandroid1.0/SkiaSharp.Views.Forms.xml",
-        "lib/net462/_._",
-        "lib/tizen40/SkiaSharp.Views.Forms.dll",
-        "lib/tizen40/SkiaSharp.Views.Forms.xml",
-        "lib/uap10.0/SkiaSharp.Views.Forms.dll",
-        "lib/uap10.0/SkiaSharp.Views.Forms.xml",
-        "lib/xamarinios1.0/SkiaSharp.Views.Forms.dll",
-        "lib/xamarinios1.0/SkiaSharp.Views.Forms.xml",
-        "lib/xamarinmac2.0/SkiaSharp.Views.Forms.dll",
-        "lib/xamarinmac2.0/SkiaSharp.Views.Forms.xml",
-        "ref/monoandroid1.0/SkiaSharp.Views.Forms.dll",
-        "ref/monoandroid1.0/SkiaSharp.Views.Forms.xml",
-        "ref/net462/_._",
-        "ref/netstandard1.3/SkiaSharp.Views.Forms.dll",
-        "ref/netstandard1.3/SkiaSharp.Views.Forms.xml",
-        "ref/netstandard2.0/SkiaSharp.Views.Forms.dll",
-        "ref/netstandard2.0/SkiaSharp.Views.Forms.xml",
-        "ref/tizen40/SkiaSharp.Views.Forms.dll",
-        "ref/tizen40/SkiaSharp.Views.Forms.xml",
-        "ref/uap10.0/SkiaSharp.Views.Forms.dll",
-        "ref/uap10.0/SkiaSharp.Views.Forms.xml",
-        "ref/xamarinios1.0/SkiaSharp.Views.Forms.dll",
-        "ref/xamarinios1.0/SkiaSharp.Views.Forms.xml",
-        "ref/xamarinmac2.0/SkiaSharp.Views.Forms.dll",
-        "ref/xamarinmac2.0/SkiaSharp.Views.Forms.xml",
-        "skiasharp.views.forms.2.80.2.nupkg.sha512",
-        "skiasharp.views.forms.nuspec"
-      ]
-    },
-    "System.Memory/4.5.3": {
-      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "type": "package",
-      "path": "system.memory/4.5.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.3.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Reflection.Emit.ILGeneration/4.7.0": {
-      "sha512": "AucBYo3DSI0IDxdUjKksBcQJXPHyoPyrCXYURW1WDsLI4M65Ar/goSHjdnHOAY9MiYDNKqDlIgaYm+zL2hA1KA==",
-      "type": "package",
-      "path": "system.reflection.emit.ilgeneration/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Reflection.Emit.ILGeneration.dll",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.Reflection.Emit.ILGeneration.dll",
-        "lib/netstandard1.0/System.Reflection.Emit.ILGeneration.xml",
-        "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll",
-        "lib/netstandard2.0/System.Reflection.Emit.ILGeneration.dll",
-        "lib/netstandard2.0/System.Reflection.Emit.ILGeneration.xml",
-        "lib/netstandard2.1/_._",
-        "lib/portable-net45+wp8/_._",
-        "lib/wp80/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll",
-        "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/de/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/es/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/fr/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/it/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/ja/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/ko/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/ru/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.dll",
-        "ref/netstandard2.0/System.Reflection.Emit.ILGeneration.xml",
-        "ref/netstandard2.1/_._",
-        "ref/portable-net45+wp8/_._",
-        "ref/wp80/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/aot/lib/netcore50/System.Reflection.Emit.ILGeneration.dll",
-        "runtimes/aot/lib/netcore50/System.Reflection.Emit.ILGeneration.xml",
-        "system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512",
-        "system.reflection.emit.ilgeneration.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Reflection.Emit.Lightweight/4.7.0": {
-      "sha512": "a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
-      "type": "package",
-      "path": "system.reflection.emit.lightweight/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Reflection.Emit.Lightweight.dll",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
-        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
-        "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll",
-        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
-        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
-        "lib/netstandard2.1/_._",
-        "lib/portable-net45+wp8/_._",
-        "lib/wp80/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
-        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/de/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/es/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/fr/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/it/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/ja/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/ko/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/ru/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
-        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard2.1/_._",
-        "ref/portable-net45+wp8/_._",
-        "ref/wp80/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll",
-        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.xml",
-        "system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
-        "system.reflection.emit.lightweight.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/4.5.3": {
-      "sha512": "3TIsJhD1EiiT0w2CcDMN/iSSwnNnsrnbzeVHSKkaEgV85txMprmuO+Yq2AdSbeVGcg28pdNDTPK87tJhX7VFHw==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Threading.Tasks.Extensions/4.5.4": {
-      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
-      "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Threading.Tasks.Extensions.dll",
-        "lib/net461/System.Threading.Tasks.Extensions.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.ValueTuple/4.5.0": {
-      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
-      "type": "package",
-      "path": "system.valuetuple/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
-        "lib/net47/System.ValueTuple.dll",
-        "lib/net47/System.ValueTuple.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
-        "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.5.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "Win2D.uwp/1.20.0": {
       "sha512": "sFyNT2EiV6vmEFMrkiJdSolaKNyOyk+kfjgvXN8XqUhdEPqBd2zPrFdl7SojNHQGm2Br6JLIBOdrj9fB1Qy4GA==",
       "type": "package",
@@ -10795,47 +8737,6 @@
         "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll",
         "win2d.uwp.1.20.0.nupkg.sha512",
         "win2d.uwp.nuspec"
-      ]
-    },
-    "Xamarin.CommunityToolkit/2.0.2": {
-      "sha512": "6GgGfnf14oIpOwtXYveAEj590jQwqQ4AcTndizc75GuhX0CvgozyE/0Jb9NWmE0bbLZoxfcc3BeGlxljRrUvMw==",
-      "type": "package",
-      "path": "xamarin.communitytoolkit/2.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "analyzers/dotnet/xct/cs/Xamarin.CommunityToolkit.SourceGenerator.dll",
-        "icon.png",
-        "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll",
-        "lib/monoandroid10.0/Xamarin.CommunityToolkit.xml",
-        "lib/net471/Xamarin.CommunityToolkit.dll",
-        "lib/net471/Xamarin.CommunityToolkit.xml",
-        "lib/net472/Xamarin.CommunityToolkit.dll",
-        "lib/net472/Xamarin.CommunityToolkit.xml",
-        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.dll",
-        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.xml",
-        "lib/netstandard1.0/Xamarin.CommunityToolkit.dll",
-        "lib/netstandard1.0/Xamarin.CommunityToolkit.xml",
-        "lib/netstandard2.0/Xamarin.CommunityToolkit.dll",
-        "lib/netstandard2.0/Xamarin.CommunityToolkit.xml",
-        "lib/netstandard2.1/Xamarin.CommunityToolkit.dll",
-        "lib/netstandard2.1/Xamarin.CommunityToolkit.xml",
-        "lib/tizen40/Xamarin.CommunityToolkit.dll",
-        "lib/tizen40/Xamarin.CommunityToolkit.xml",
-        "lib/uap10.0.18362/Xamarin.CommunityToolkit.dll",
-        "lib/uap10.0.18362/Xamarin.CommunityToolkit.pri",
-        "lib/uap10.0.18362/Xamarin.CommunityToolkit.xml",
-        "lib/xamarinios10/Xamarin.CommunityToolkit.dll",
-        "lib/xamarinios10/Xamarin.CommunityToolkit.xml",
-        "lib/xamarinmac20/Xamarin.CommunityToolkit.dll",
-        "lib/xamarinmac20/Xamarin.CommunityToolkit.xml",
-        "lib/xamarintvos10/Xamarin.CommunityToolkit.dll",
-        "lib/xamarintvos10/Xamarin.CommunityToolkit.xml",
-        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.dll",
-        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.xml",
-        "xamarin.communitytoolkit.2.0.2.nupkg.sha512",
-        "xamarin.communitytoolkit.nuspec"
       ]
     },
     "Xamarin.Essentials/1.7.0": {
@@ -11111,28 +9012,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\777\\.nuget\\packages\\": {},
+    "C:\\Users\\sars1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\777\\source\\repos\\Diplommapp\\Diplommapp\\Diplommapp.UWP\\Diplommapp.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplommapp\\Diplommapp\\Diplommapp.UWP\\Diplommapp.UWP.csproj",
       "projectName": "Diplommapp.UWP",
-      "projectPath": "C:\\Users\\777\\source\\repos\\Diplommapp\\Diplommapp\\Diplommapp.UWP\\Diplommapp.UWP.csproj",
-      "packagesPath": "C:\\Users\\777\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\777\\source\\repos\\Diplommapp\\Diplommapp\\Diplommapp.UWP\\obj\\",
+      "projectPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplommapp\\Diplommapp\\Diplommapp.UWP\\Diplommapp.UWP.csproj",
+      "packagesPath": "C:\\Users\\sars1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplommapp\\Diplommapp\\Diplommapp.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\777\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sars1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "uap10.0.16299"
@@ -11144,8 +9048,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\777\\source\\repos\\Diplommapp\\Diplommapp\\Diplommapp\\Diplommapp.csproj": {
-              "projectPath": "C:\\Users\\777\\source\\repos\\Diplommapp\\Diplommapp\\Diplommapp\\Diplommapp.csproj"
+            "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplommapp\\Diplommapp\\Diplommapp\\Diplommapp.csproj": {
+              "projectPath": "C:\\Users\\sars1\\Desktop\\folder\\folder\\Diplommapp\\Diplommapp\\Diplommapp\\Diplommapp.csproj"
             }
           }
         }
@@ -11200,36 +9104,74 @@
   },
   "logs": [
     {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.7.3 на 1.7.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n Diplommapp.UWP -> Diplommapp -> Xamarin.Essentials (>= 1.7.3) \r\n Diplommapp.UWP -> Xamarin.Essentials (>= 1.7.0)",
-      "libraryId": "Xamarin.Essentials",
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299). Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
       "targetGraphs": [
-        "UAP,Version=v10.0.16299",
-        "UAP,Version=v10.0.16299/win10-arm",
-        "UAP,Version=v10.0.16299/win10-arm-aot",
-        "UAP,Version=v10.0.16299/win10-arm64-aot",
-        "UAP,Version=v10.0.16299/win10-x64",
-        "UAP,Version=v10.0.16299/win10-x64-aot",
-        "UAP,Version=v10.0.16299/win10-x86",
-        "UAP,Version=v10.0.16299/win10-x86-aot"
+        "UAP,Version=v10.0.16299"
       ]
     },
     {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 5.0.0.2401 на 5.0.0.2196. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n Diplommapp.UWP -> Diplommapp -> Xamarin.Forms (>= 5.0.0.2401) \r\n Diplommapp.UWP -> Xamarin.Forms (>= 5.0.0.2196)",
-      "libraryId": "Xamarin.Forms",
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm. Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
       "targetGraphs": [
-        "UAP,Version=v10.0.16299",
-        "UAP,Version=v10.0.16299/win10-arm",
-        "UAP,Version=v10.0.16299/win10-arm-aot",
-        "UAP,Version=v10.0.16299/win10-arm64-aot",
-        "UAP,Version=v10.0.16299/win10-x64",
-        "UAP,Version=v10.0.16299/win10-x64-aot",
-        "UAP,Version=v10.0.16299/win10-x86",
+        "UAP,Version=v10.0.16299/win10-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm-aot. Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299/win10-arm-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm64-aot. Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299/win10-arm64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x64. Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x64-aot. Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299/win10-x64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x86. Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299/win10-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Проект Diplommapp несовместим с uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x86-aot. Проект Diplommapp поддерживает: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Diplommapp",
+      "targetGraphs": [
         "UAP,Version=v10.0.16299/win10-x86-aot"
       ]
     }

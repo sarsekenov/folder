@@ -1,1 +1,0 @@
-G:\folder\Diplomapp\Diplomapp\Diplomapp.UWP\Diplomapp.UWP.csproj;x64

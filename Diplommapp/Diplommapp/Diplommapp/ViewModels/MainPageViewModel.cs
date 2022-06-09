@@ -17,7 +17,6 @@ namespace Diplomapp.ViewModels
     {
         public MainPageViewModel()
         {
-
             GetMyProjects = new AsyncCommand(getMyProjects);
             GetProjects = new AsyncCommand(getProjects);
             Projects = new ObservableRangeCollection<Project>();

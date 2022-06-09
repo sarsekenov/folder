@@ -5,7 +5,7 @@
              xmlns:viewmodel ="clr-namespace:Diplomapp.ViewModels"
              xmlns:models="clr-namespace:Diplomapp.Models"
              xmlns:xtc="http://xamarin.com/schemas/2020/toolkit"
-             x:Name="InviteView"            >
+             x:Name="InviteView">
     <ContentPage.Behaviors>
         <xtc:EventToCommandBehavior EventName="Appearing" Command="{Binding command}"/>
     </ContentPage.Behaviors>
@@ -32,6 +32,7 @@
                                     <Button Text="Отказаться" Command = "{Binding Path=BindingContext.Decline ,Source={x:Reference InviteView}}" CommandParameter ="{Binding .}"/>
                                 </StackLayout>
                             </Frame>
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
